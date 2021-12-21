@@ -2,6 +2,7 @@ $color-primary: rgb(209, 69, 209);
 $color-header: #222222;
 $color-text: #fbfbfb;
 $color-gradient: (#021AEE, #D602EE);
+$text-gradient: (#23e2ce, #e22336);
 .container {
     padding: 0;
 }
@@ -30,6 +31,7 @@ $color-gradient: (#021AEE, #D602EE);
             cursor: pointer;
             padding-left: 1em;
             padding-right: 1em;
+            cursor: pointer;
         }
         button {
             padding: 10px;
@@ -38,7 +40,7 @@ $color-gradient: (#021AEE, #D602EE);
             font-weight: bold;
             border: none;
              :hover {
-                background: -webkit-radial-gradient($color-gradient);
+                background: -webkit-radial-gradient($text-gradient);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
