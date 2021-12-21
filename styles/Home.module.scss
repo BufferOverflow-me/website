@@ -10,7 +10,7 @@ $color-footer: #222222;
 }
 
 .main {
-    min-height: 100vh;
+    max-height: 100vh;
     flex: 1;
     flex-direction: column;
     justify-content: center;
@@ -20,6 +20,7 @@ $color-footer: #222222;
         text-align: center;
         color: $color-text;
         margin-top: 10%;
+        // height: 50%;
         .title {
             font-weight: bold;
             margin: 10px;
@@ -39,10 +40,6 @@ $color-footer: #222222;
             font-size: 1.125rem;
         }
         button {
-            background-image: -webkit-linear-gradient(left, $color-gradient);
-            background-image: -moz-linear-gradient(left, $color-gradient);
-            background-image: -ms-linear-gradient(left, $color-gradient);
-            background-image: -o-linear-gradient(left, $color-gradient);
             background-image: linear-gradient(to right, $color-gradient);
             border-radius: 10px;
             color: $color-text;
@@ -62,9 +59,10 @@ $color-footer: #222222;
             padding: 0 20px;
             display: table;
             min-width: 100%;
-            box-shadow: inset 0 300px 0 $color-header, inset 0 -300px 0 $color-background;
+            box-shadow: inset 0 18.75rem 0 $color-header, inset 0 -18.75rem 0 $color-background;
+            height: 50%;
             .myImage {
-                border-radius: 10px;
+                border-radius: 15px;
                 box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
             }
         }
