@@ -17,7 +17,7 @@ function header() {
                     </span>
                 </Link>
                 <nav className={styles.mid}>
-                    <Link href="/#Overview" passHref>
+                    <Link href="#Overview" passHref>
                         Overview
                     </Link>
                     <Link href="/blog" passHref>
@@ -28,7 +28,7 @@ function header() {
                     </Link>
                 </nav>
                 <nav>
-                    <Link href="/login" passHref>
+                    <Link href="/signin" passHref>
                         Login
                     </Link>
                     <button>
