@@ -3,7 +3,9 @@ import styles from '../../../styles/Home.module.scss'
 const main = () => {
     return (
         <div className={styles.mainSection}>
-            Main Page
+            <div className={styles.title}>
+                A place to build great services.
+            </div>
         </div>
     )
 }

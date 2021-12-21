@@ -16,6 +16,7 @@ $color-footer: #222222;
     align-items: center;
     background-color: $color-header;
     .mainSection {
+        margin-top: 10px;
         text-align: center;
     }
 }
@@ -93,10 +94,7 @@ $color-footer: #222222;
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
-    a {
-        color: $color-primary;
-        text-decoration: none;
-    }
+    color: $color-text;
 }
 
 .title a:hover,
