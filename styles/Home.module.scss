@@ -21,13 +21,13 @@ $color-gradient: (#021AEE, #D602EE);
     justify-content: space-evenly;
     align-items: center;
     display: flex;
-    cursor: pointer;
     font-size: 24px;
     color: $color-text;
     nav {
         justify-content: space-evenly;
         justify-content: space-evenly;
         a {
+            cursor: pointer;
             padding-left: 1em;
             padding-right: 1em;
         }
@@ -36,6 +36,7 @@ $color-gradient: (#021AEE, #D602EE);
             border-radius: 10px;
             font-size: large;
             font-weight: bold;
+            border: none;
              :hover {
                 background: -webkit-radial-gradient($color-gradient);
                 background-clip: text;
@@ -58,17 +59,18 @@ $color-gradient: (#021AEE, #D602EE);
 }
 
 .footer {
+    align-items: center;
+    border-top: 1px solid #eaeaea;
     display: flex;
     flex: 1;
-    padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
     justify-content: center;
-    align-items: center;
+    padding: 2rem 0;
     a {
-        display: flex;
-        justify-content: center;
+        width: 20%;
         align-items: center;
+        display: flex;
         flex-grow: 1;
+        justify-content: center;
     }
 }
 

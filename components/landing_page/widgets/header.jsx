@@ -26,7 +26,7 @@ function header() {
                 </Link>
                 <button>
                     <Link href="/signup" passHref>
-                            Create Account
+                        Create Account
                     </Link>
                 </button>
             </nav>

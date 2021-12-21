@@ -8,9 +8,9 @@ function footer() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Powered by{' '}
+                {/* Powered by{' '} */}
                 <span className={styles.logo}>
-                    BufferOverflow
+                © BufferOverflow 2021 | All rights reserved
                 </span>
             </a>
         </footer>
