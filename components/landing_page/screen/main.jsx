@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../../../styles/Home.module.scss'
-
-const sample = () => {
+const main = () => {
     return (
-        <div className={styles.sampleSection}>
-            sample Page
+        <div className={styles.mainSection}>
+            Main Page
         </div>
     )
 }
 
-export default sample
+export default main
+
