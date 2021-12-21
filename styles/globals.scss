@@ -12,6 +12,15 @@ body {
     -ms-overflow-style: none;
     /* Firefox */
     scrollbar-width: none;
+    // Text selection color
+     ::-moz-selection {
+        color: black;
+        background: lightblue;
+    }
+     ::selection {
+        color: black;
+        background: lightblue;
+    }
 }
 
 a {
