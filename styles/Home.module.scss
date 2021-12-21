@@ -3,6 +3,7 @@ $color-header: #222222;
 $color-text: #fbfbfb;
 $color-gradient: (#021AEE, #D602EE);
 $text-gradient: (#23e2ce, #e22336);
+$color-footer: #222222;
 .container {
     padding: 0;
 }
@@ -62,17 +63,24 @@ $text-gradient: (#23e2ce, #e22336);
 
 .footer {
     align-items: center;
-    border-top: 1px solid #eaeaea;
+    background-color: $color-footer;
     display: flex;
     flex: 1;
     justify-content: center;
     padding: 2rem 0;
+    flex-direction: column;
+    color: $color-text;
+    hr {
+        width: 88%;
+    }
     a {
-        width: 20%;
         align-items: center;
         display: flex;
-        flex-grow: 1;
         justify-content: center;
+    }
+    span {
+        padding: 10px 0 20px;
+        margin: 10px 0;
     }
 }
 
@@ -145,16 +153,6 @@ $text-gradient: (#23e2ce, #e22336);
         font-size: 1.25rem;
         line-height: 1.5;
     }
-}
-
-.logo {
-    height: 1em;
-    margin-left: 0.5rem;
-    font-weight: bold;
-    background: -webkit-radial-gradient($color-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 600px) {
