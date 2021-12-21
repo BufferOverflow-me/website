@@ -1,4 +1,5 @@
 $color-primary: rgb(209, 69, 209);
+$color-header: #222222;
 $color-gradient: (#021AEE, #D602EE);
 .container {
     padding: 0 2rem;
@@ -15,8 +16,26 @@ $color-gradient: (#021AEE, #D602EE);
 }
 
 .header {
-    url {
+    background-color: $color-header;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    cursor: pointer;
+    .url {
         text-align: center;
+        color: #ffffff;
+    }
+    .signup {
+        font-size: x-large;
+    }
+    .logo {
+        font-size: x-large;
+        font-weight: bold;
+        background: -webkit-radial-gradient($color-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
 

@@ -4,30 +4,30 @@ import styles from '../../../styles/Home.module.scss'
 function header() {
     return (
         <header className={styles.header}>
-            <Link href="/" passHref>
-                <span className={styles.logo}>
-                    BufferOverflow
-                </span>
-            </Link>
-            <nav className={styles.header.url}>
-                <Link href="/#Overview" passHref>
-                    Overview
+                <Link href="/" passHref>
+                    <span className={styles.logo}>
+                        BufferOverflow
+                    </span>
                 </Link>
-                <Link href="/blog" passHref>
-                    Blog
-                </Link>
-                <Link href="/support" passHref>
-                    Support
-                </Link>
-            </nav>
-            <nav>
-                <div className={styles.header.url}>
-                    Login in
-                </div>
-                <div className={styles.header.signup}>
-                    Create Account
-                </div>
-            </nav>
+                <nav className={styles.url}>
+                    <Link href="/#Overview" passHref>
+                        Overview
+                    </Link>
+                    <Link href="/blog" passHref>
+                        Blog
+                    </Link>
+                    <Link href="/support" passHref>
+                        Support
+                    </Link>
+                </nav>
+                <nav>
+                    <div className={styles.url}>
+                        Login in
+                    </div>
+                    <div className={styles.signup}>
+                        Create Account
+                    </div>
+                </nav>
         </header>
     )
 }
