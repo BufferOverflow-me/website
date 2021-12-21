@@ -8,9 +8,7 @@ const main = () => {
     return (
         <div className={styles.mainSection}>
             <div className={styles.title}>
-                <blockquote>
                 A place to build great services.
-                </blockquote>
 
             </div>
             <div className={styles.desc}>
@@ -18,11 +16,11 @@ const main = () => {
             </div>
             <button href="#">Subscribe for updates</button>
             <div className={styles.img}>
-                <Image
-                src='https://images.unsplash.com/photo-1503437313881-503a91226402?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODI5NXwwfDF8c2VhcmNofDF8fGRvJTIwd2hhdCUyMGlzJTIwZ3JlYXR8ZW58MHx8fHwxNjQwMDk1Mjk3&ixlib=rb-1.2.1&q=80&w=400'
+                <Image className={styles.myImage}
+                src='https://images.unsplash.com/photo-1503437313881-503a91226402?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODI5NXwwfDF8c2VhcmNofDF8fGRvJTIwd2hhdCUyMGlzJTIwZ3JlYXR8ZW58MHx8fHwxNjQwMDk1Mjk3&ixlib=rb-1.2.1&q=80&w=1400'
                 alt='Home Image'
-                width={400}
-                height={80}
+                width={1400}
+                height={800}
                 />
             </div>
         </div>

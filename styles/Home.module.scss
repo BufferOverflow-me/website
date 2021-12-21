@@ -1,6 +1,7 @@
 $color-primary: rgb(209, 69, 209);
 $color-header: #222222;
 $color-text: #fbfbfb;
+$color-background: #F5F5F5;
 $color-gradient: (#021AEE, #D602EE);
 $text-gradient: (#23e2ce, #e22336);
 $color-footer: #222222;
@@ -18,8 +19,10 @@ $color-footer: #222222;
     .mainSection {
         text-align: center;
         color: $color-text;
+        margin-top: 10%;
         .title {
-            margin: 0px;
+            font-weight: bold;
+            margin: 10px;
             // line-height: 1.15;
             font-size: 4rem;
              ::before {
@@ -30,8 +33,9 @@ $color-footer: #222222;
             }
         }
         .desc {
-            width: 50%;
-            margin: 5px auto;
+            width: 30%;
+            font-weight: 400;
+            margin: 5px auto 60px;
             font-size: 1.125rem;
         }
         button {
@@ -42,11 +46,12 @@ $color-footer: #222222;
             background-image: linear-gradient(to right, $color-gradient);
             border-radius: 10px;
             color: $color-text;
-            font-size: 20px;
-            padding: 10px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px 50px;
             text-decoration: none;
             border: none;
-            margin: 30px auto;
+            margin-bottom: 5%;
             cursor: pointer;
              :hover {
                 text-decoration: none;
@@ -56,11 +61,22 @@ $color-footer: #222222;
             padding: 0 20px;
             display: table;
             min-width: 100%;
-            box-shadow: inset 0 120px 0 blue, inset 0 -120px 0 white;
-            height: 244px;
-            line-height: 244px;
+            box-shadow: inset 0 300px 0 $color-header, inset 0 -300px 0 $color-background;
+            .myImage {
+                border-radius: 10px;
+            }
         }
     }
+}
+
+.featureSection {
+    height: 100vh;
+    background-color: $color-background;
+}
+
+.sampleSection {
+    height: 100vh;
+    background-color: $color-background;
 }
 
 .header {
