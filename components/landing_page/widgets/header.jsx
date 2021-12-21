@@ -22,7 +22,7 @@ function header() {
             </nav>
             <nav>
                 <Link href="/login" passHref>
-                    Sign in
+                    Login
                 </Link>
                 <button>
                     <Link href="/signup" passHref>
