@@ -9,6 +9,57 @@ $color-footer: #222222;
     padding: 0;
 }
 
+.header {
+    padding: 1.5rem;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    font-size: 24px;
+    color: $color-text;
+    user-select: none;
+    .url {
+        text-align: center;
+    }
+    .logo {
+        font-size: 30px;
+        font-weight: bold;
+        background: -webkit-radial-gradient($color-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    nav {
+        justify-content: space-evenly;
+        justify-content: space-evenly;
+        a {
+            cursor: pointer;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+        button {
+            padding: 10px;
+            border-radius: 10px;
+            font-size: large;
+            font-weight: bold;
+            border: none;
+            // Transition
+            transition: all 300ms ease-in-out;
+             :hover {
+                background: -webkit-radial-gradient($text-gradient);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        nav {
+            display: none;
+        }
+    }
+}
+
 .main {
     min-height: 100vh;
     flex: 1;
@@ -25,11 +76,10 @@ $color-footer: #222222;
             margin: 10px;
             // line-height: 1.15;Interactively
             font-size: 4rem;
-             ::before {
-                content: open-quote;
-            }
-             ::after {
-                content: close-quote;
+             :hover,
+             :active,
+             :focus {
+                text-decoration: underline;
             }
         }
         .desc {
@@ -81,57 +131,6 @@ $color-footer: #222222;
     background-color: $color-background;
 }
 
-.header {
-    padding: 1.5rem;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    display: flex;
-    font-size: 24px;
-    color: $color-text;
-    user-select: none;
-    nav {
-        justify-content: space-evenly;
-        justify-content: space-evenly;
-        a {
-            cursor: pointer;
-            padding-left: 1em;
-            padding-right: 1em;
-        }
-        button {
-            padding: 10px;
-            border-radius: 10px;
-            font-size: large;
-            font-weight: bold;
-            border: none;
-            // Transition
-            transition: all 300ms ease-in-out;
-             :hover {
-                background: -webkit-radial-gradient($text-gradient);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        }
-    }
-    @media (max-width: 1000px) {
-        nav {
-            display: none;
-        }
-    }
-    .url {
-        text-align: center;
-    }
-    .logo {
-        font-size: 30px;
-        font-weight: bold;
-        background: -webkit-radial-gradient($color-gradient);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
 .footer {
     align-items: center;
     background-color: $color-footer;
@@ -156,24 +155,18 @@ $color-footer: #222222;
     }
 }
 
+.skip {
+    position: absolute;
+    color: $color-text;
+    padding: 0.5rem 1.5rem;
+    transform: translateY(-120%);
+    transition: transform 200ms ease-in;
+     :focus {
+        transform: translateY(0);
+    }
+}
+
 // From vercel.
-.title a:hover,
-.title a:focus,
-.title a:active {
-    text-decoration: underline;
-}
-
-.title,
-.description {
-    text-align: center;
-}
-
-.description {
-    margin: 4rem 0;
-    line-height: 1.5;
-    font-size: 1.5rem;
-}
-
 .code {
     background: #fafafa;
     border-radius: 5px;
@@ -222,35 +215,5 @@ $color-footer: #222222;
     .grid {
         width: 100%;
         flex-direction: column;
-    }
-}
-
-.snowbg {
-    position: relative;
-}
-
-.snowbg:after {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    background-image: url('https://library.elementor.com/resources/christmas-snow-effect/s1.png'), url('https://library.elementor.com/resources/christmas-snow-effect/s2.png'), url('https://library.elementor.com/resources/christmas-snow-effect/s3.png');
-    animation: snow 10s linear infinite;
-}
-
-@keyframes snow {
-    0% {
-        background-position: 0px 0px, 0px 0px, 0px 0px;
-    }
-    50% {
-        background-position: 500px 500px, 100px 200px, -100px 150px;
-    }
-    100% {
-        background-position: 500px 1000px, 200px 400px, -100px 300px;
     }
 }

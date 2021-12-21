@@ -6,7 +6,7 @@ const myLoader = () => {
   }
 const main = () => {
     return (
-        <div className={styles.mainSection}>
+        <div className={styles.mainSection} id="main-content">
             <div className={styles.title}>
                 A place to build great services.
 
