@@ -31,6 +31,81 @@ $clr-card: #222222;
         -webkit-text-fill-color: transparent;
         cursor: pointer;
     }
+    .nav {
+        background-color: $color-background;
+        // display: none;
+        position: absolute;
+        right: 0;
+        box-shadow: 0 0 3em rgba(0, 0, 0, .15);
+        transform: translateX(100%);
+        transition: transform 300ms cubic-bezier(.5, 0, .5, 1);
+    }
+    .nav_list {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 10vh;
+        padding: 3em 6em;
+    }
+    .nav_item {
+        margin-bottom: 3em;
+    }
+    .nav_link {
+        color: $color-header;
+        text-decoration: none;
+         :hover {
+            text-decoration: underline;
+            color: #222222;
+        }
+    }
+    .nav__toggle {
+        position: absolute;
+        top: 2em;
+        left: 0;
+        transform: translateX(-100%);
+        background: $color-background;
+        padding: 1em .5em;
+        border: 0;
+        border-radius: .25em 0 0 .25em;
+    }
+    .hamburger {
+        display: block;
+        position: relative;
+    }
+    .hamburger,
+    .hamburger::after,
+    .hamburger::before {
+        width: 2em;
+        height: 3px;
+        background: black;
+        transition: transform 350ms ease-in-out;
+    }
+    .hamburger::after,
+    .hamburger::before {
+        content: '';
+        position: absolute;
+        left: 0;
+    }
+    .hamburger::after {
+        bottom: 6px;
+    }
+    .hamburger::before {
+        top: 6px
+    }
+    .nav_open .nav {
+        transform: translateX(0);
+    }
+    .nav-open .hamburger {
+        transform: rotate(45deg);
+    }
+    .nav-open .hamburger::before {
+        opacity: 0;
+    }
+    .nav-open .hamburger::after {
+        transform: rotate(90deg) translate(-6px);
+    }
+    //
     nav {
         justify-content: space-evenly;
         a {
@@ -53,16 +128,16 @@ $clr-card: #222222;
             }
         }
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 1040px) {
+        .mid,
+        .right_nav {
+            display: none;
+        }
         button {
             display: none;
         }
     }
-    @media (max-width: 800px) {
-        nav {
-            display: none;
-        }
-    }
+    @media (min-width: 800px) {}
 }
 
 .main {
@@ -111,6 +186,11 @@ $clr-card: #222222;
             padding: 1rem 3.125rem;
             text-decoration: none;
             user-select: none;
+            transition: 1.5s;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
         }
         .img {
             padding: 0 20px;
@@ -120,16 +200,10 @@ $clr-card: #222222;
             height: 75px;
             .myImage {
                 overflow: hidden;
-                background-color: transparent;
                 border-radius: 10px;
-                box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
             }
         }
-        @media (max-width: 1000px) {
-            .myImage {
-                height: 400px;
-                border-radius: 10px;
-            }
+        @media (max-width: 900px) {
             button {
                 border-radius: 0.625rem;
                 font-size: 1rem;
@@ -176,7 +250,7 @@ $clr-card: #222222;
     .card:hover,
     .card:focus,
     .card:active {
-        transform: scale(1.2);
+        transform: scale(1.1);
         background-color: rgba(0, 0, 0);
     }
     .card {
@@ -192,6 +266,7 @@ $clr-card: #222222;
         min-height: 230px;
         transition: all 600ms ease-in-out;
         user-select: none;
+        box-shadow: 12px 14px 0px 0px rgb(56 50 50 / 33%);
         .cardTitle {
             font-size: 2rem;
             font-weight: bold;
@@ -217,7 +292,7 @@ $clr-card: #222222;
             flex-direction: column;
         }
         .card {
-            margin: 0 0 1rem;
+            margin: 0 0 3rem;
         }
     }
 }
@@ -249,15 +324,6 @@ $clr-card: #222222;
         padding: 0.625rem 0 20px;
         margin: 0.625rem 0;
     }
-}
-
-// From vercel.
-.code {
-    background: #fafafa;
-    border-radius: 5px;
-    padding: 0.75rem;
-    font-size: 1.1rem;
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .skip {
