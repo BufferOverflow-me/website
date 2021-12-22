@@ -8,7 +8,7 @@ const main = () => {
     return (
         <div className={styles.mainSection} id="main-content">
             <div className={styles.title}>
-                A place to build great services
+                A place to build <span>great services.</span>
             </div>
             <div className={styles.desc}>
             Ullam asperiores necessitatibus nisi hic ullam ad sed voluptas. Porro ut accusamus earum soluta sint nemo.
