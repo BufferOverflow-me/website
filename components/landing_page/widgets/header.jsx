@@ -3,34 +3,42 @@ import Link from 'next/link'
 import styles from '../../../styles/Home.module.scss'
 function header() {
     return (
-        <header className={styles.header}>
-            <Link href="/" passHref>
-                <span className={styles.logo}>
-                    BufferOverflow
-                </span>
-            </Link>
-            <nav className={styles.mid}>
-                <Link href="/#Overview" passHref>
-                    Overview
+        <div>
+             <div className={styles.skip}>
+                <Link href="#main-content" passHref>
+                    skip navigation
                 </Link>
-                <Link href="/blog" passHref>
-                    Blog
+            </div>
+            <header className={styles.header}>
+            
+                <Link href="/" passHref>
+                    <span className={styles.logo}>
+                        BufferOverflow
+                    </span>
                 </Link>
-                <Link href="/support" passHref>
-                    Support
-                </Link>
-            </nav>
-            <nav>
-                <Link href="/login" passHref>
-                    Login
-                </Link>
-                <button>
-                    <Link href="/signup" passHref>
-                        Create Account
+                <nav className={styles.mid}>
+                    <Link href="#Overview" passHref>
+                        Overview
                     </Link>
-                </button>
-            </nav>
-        </header>
+                    <Link href="/blog" passHref>
+                        Blog
+                    </Link>
+                    <Link href="/support" passHref>
+                        Support
+                    </Link>
+                </nav>
+                <nav>
+                    <Link href="/signin" passHref>
+                        Login
+                    </Link>
+                    <button>
+                        <Link href="/signup" passHref>
+                            Create Account
+                        </Link>
+                    </button>
+                </nav>
+            </header>
+        </div>
     )
 }
 

@@ -3,7 +3,7 @@ import styles from '../../../styles/Home.module.scss'
 
 const sample = () => {
     return (
-        <div className={styles.sampleSection}>
+        <div className={styles.sampleSection} id="Overview">
            Sample Page
         </div>
     )
