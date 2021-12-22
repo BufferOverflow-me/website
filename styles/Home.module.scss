@@ -1,8 +1,8 @@
 $color-primary: rgb(209, 69, 209);
 $color-header: #222222;
 $color-text: #fbfbfb;
-$color-background: #F5F5F5;
-$color-gradient: (#021AEE, #D602EE);
+$color-background: #f5f5f5;
+$color-gradient: (#021aee, #d602ee);
 $text-gradient: (#23e2ce, #e22336);
 $color-footer: #222222;
 $clr-card: #222222;
@@ -133,7 +133,7 @@ $clr-card: #222222;
             button {
                 border-radius: 0.625rem;
                 font-size: 1rem;
-                padding: .85rem 2.125rem;
+                padding: 0.85rem 2.125rem;
             }
             .desc {
                 width: 65%;
@@ -170,7 +170,7 @@ $clr-card: #222222;
         width: 55%;
         font-weight: 400;
         margin: 5px auto 60px;
-        font-size: clamp(1rem, 1vw + .5rem, 2rem);
+        font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
         font-weight: 500;
     }
     .card:hover,
