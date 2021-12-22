@@ -203,7 +203,7 @@ $clr-card: #222222;
             padding-right: 1.5rem;
             background: linear-gradient(75deg, #FFFFFF 0%, #BD06E4 100%);
             /* Mask the color to the text, and remove the rest  */
-            -webkit-background-clip: text;
+            background-clip: text;
             /* Make the text fill color value transparent so the masked background color comes through */
             -webkit-text-fill-color: transparent;
         }
@@ -213,12 +213,16 @@ $clr-card: #222222;
             border-top: 5px solid;
             border-radius: 10px;
             border-width: 0.25rem;
+            color: $color-primary;
         }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
         .grid {
             width: 100%;
             flex-direction: column;
+        }
+        .card {
+            margin: 0 0 1rem;
         }
     }
 }
