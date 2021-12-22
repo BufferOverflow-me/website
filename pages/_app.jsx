@@ -1,10 +1,12 @@
 import '../styles/globals.scss'
-import Layout from '../components/landing_page/layout'
+import Head from '../components/head'
+
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
+      <Head />
       <Component {...pageProps} />
-    </Layout>
+    </>
   );
 }
 
