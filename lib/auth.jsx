@@ -1,4 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { useState, useEffect, useContext, createContext } from 'react';
+import Router from 'next/router';
+import cookie from 'js-cookie';
 import firebase from "./firebase";
 
 const authContext = createContext();
@@ -21,44 +23,93 @@ export const useAuth = () => {
 function useProvideAuth() {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const handleUser = (rawUser) => {
-        if (rawUser) {
-            const user = formatUser(rawUser);
-            setLoading(false);
-            setUser(user);
-            return user;
-        }else{
-            // Not logged in.
-            setLoading(false);
-            setUser(false);
-            return false;
-        }
-    }
-    const signInWithGithub = () =>{
-        setLoading(true);
-        return firebase
+  
+    const handleUser = async (rawUser) => {
+      if (rawUser) {
+        const user = await formatUser(rawUser);
+        const { token, ...userWithoutToken } = user;
+  
+        createUser(user.uid, userWithoutToken);
+        setUser(user);
+  
+        cookie.set('bufferOverflow-auth', true, {
+          expires: 1
+        });
+  
+        setLoading(false);
+        return user;
+      } else {
+        setUser(false);
+        cookie.remove('bufferOverflow-auth');
+  
+        setLoading(false);
+        return false;
+      }
+    };
+  
+    const signinWithEmail = (email, password) => {
+      setLoading(true);
+      return firebase
         .auth()
-        .signInWithPopup(new firebase.auth.Auth.GithubAuthProvider())
-        .then((response) => handleUser(response.user));
-    }
-    const signOut =() =>{
-        return firebase
+        .signInWithEmailAndPassword(email, password)
+        .then((response) => {
+          handleUser(response.user);
+          Router.push('/sites');
+        });
+    };
+  
+    const signinWithGitHub = (redirect) => {
+      setLoading(true);
+      return firebase
+        .auth()
+        .signInWithPopup(new firebase.auth.GithubAuthProvider())
+        .then((response) => {
+          handleUser(response.user);
+  
+          if (redirect) {
+            Router.push(redirect);
+          }
+        });
+    };
+  
+    const signinWithGoogle = (redirect) => {
+      setLoading(true);
+      return firebase
+        .auth()
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+        .then((response) => {
+          handleUser(response.user);
+  
+          if (redirect) {
+            Router.push(redirect);
+          }
+        });
+    };
+  
+    const signout = () => {
+      Router.push('/');
+  
+      return firebase
         .auth()
         .signOut()
-        .then(()=>handleUser(false));
-    }
-
-
-    useEffect(()=>{
-        const unsubcribe = firebase.auth.Auth().onAuthStateChanged(handleUser);
-        return () => unsubcribe;
-    }, [])
+        .then(() => handleUser(false));
+    };
+  
+    useEffect(() => {
+      const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
+  
+      return () => unsubscribe();
+    }, []);
+  
     return {
-        user: null,
-        signinWithGithub: null,
-        signout: null,
-    }
-}
+      user,
+      loading,
+      signinWithEmail,
+      signinWithGitHub,
+      signinWithGoogle,
+      signout
+    };
+  }
 
 const formatUser = (user) => {
     return {
