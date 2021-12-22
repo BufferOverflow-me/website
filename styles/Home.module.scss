@@ -203,6 +203,7 @@ $clr-card: #222222;
             padding-right: 1.5rem;
             background: linear-gradient(75deg, #FFFFFF 0%, #BD06E4 100%);
             /* Mask the color to the text, and remove the rest  */
+            background-clip: text;
             -webkit-background-clip: text;
             /* Make the text fill color value transparent so the masked background color comes through */
             -webkit-text-fill-color: transparent;
