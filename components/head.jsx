@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import Head from 'next/head'
 const head = (props) => {
     return (
-        <head>
+        <Head>
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
             <link rel="icon" href="/favicon.ico" />
-        </head>
+        </Head>
     )
 }
 
