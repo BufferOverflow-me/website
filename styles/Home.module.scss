@@ -141,6 +141,7 @@ $clr-card: #222222;
         margin: 8rem auto 1rem;
         width: 65%;
         font-size: clamp(1rem, 3vw + 1rem, 4rem);
+        line-height: 2rem;
     }
     .grid {
         display: flex;
@@ -151,45 +152,44 @@ $clr-card: #222222;
         margin: auto;
     }
     .desc {
-        width: 65%;
+        width: 55%;
         font-weight: 400;
         margin: 5px auto 60px;
         font-size: 1.125rem;
-        line-height: 01.55rem;
+        font-weight: 500;
     }
     .card:hover,
     .card:focus,
     .card:active {
-        color: $color-primary;
-        border-color: $color-primary;
+        transform: scale(1.2);
+        background-color: rgba(0, 0, 0);
     }
     .card {
         background-color: $clr-card;
         margin: 2rem;
-        // margin-right: 2rem;
-        padding: 1rem;
+        padding: 1.5rem;
         text-align: left;
         color: $color-text;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
         border-radius: 0.625rem;
-        transition: color 0.15s ease, border-color 0.15s ease;
+        transition: all 0.15s ease;
         max-width: 250px;
-        h2 {
-            margin: 0;
-            font-size: 1.5rem;
+        transition: all 600ms ease-in-out;
+        user-select: none;
+        .cardTitle {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: dashed;
         }
-        p {
+        .cardDesc {
             margin: 0;
             font-size: 1.25rem;
-            line-height: 1.5;
-            padding-right: 1rem;
         }
         .cardHr {
             margin: 0px 0px 1rem;
             border: none;
             border-top: 5px solid;
-            background: linear-gradient(to right, #222222, #FFFFFF, #C504EE);
+            border-radius: 10px;
+            border-width: 0.15rem;
         }
     }
     @media (max-width: 600px) {
@@ -244,7 +244,4 @@ $clr-card: #222222;
     padding: 0.5rem 1.5rem;
     transform: translateY(-120%);
     transition: transform 200ms ease-in;
-     :focus {
-        transform: translateY(0);
-    }
 }
