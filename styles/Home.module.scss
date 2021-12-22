@@ -181,13 +181,15 @@ $clr-card: #222222;
     }
     .card {
         background-color: $clr-card;
-        margin: 2rem;
+        margin: 2.5rem;
         padding: 1.5rem;
+        padding-right: 2rem;
         text-align: left;
         color: $color-text;
-        border-radius: 0.625rem;
+        border-radius: 1.25rem;
         transition: all 0.15s ease;
-        max-width: 250px;
+        max-width: 275px;
+        min-height: 230px;
         transition: all 600ms ease-in-out;
         user-select: none;
         .cardTitle {
@@ -198,13 +200,19 @@ $clr-card: #222222;
         .cardDesc {
             margin: 0;
             font-size: 1.25rem;
+            padding-right: 1.5rem;
+            background: linear-gradient(75deg, #FFFFFF 0%, #BD06E4 100%);
+            /* Mask the color to the text, and remove the rest  */
+            -webkit-background-clip: text;
+            /* Make the text fill color value transparent so the masked background color comes through */
+            -webkit-text-fill-color: transparent;
         }
         .cardHr {
-            margin: 0px 0px 1rem;
+            margin: 0px 0px 2rem;
             border: none;
             border-top: 5px solid;
             border-radius: 10px;
-            border-width: 0.15rem;
+            border-width: 0.25rem;
         }
     }
     @media (max-width: 600px) {
