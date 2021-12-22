@@ -7,12 +7,6 @@ import Sample from '../components/landing_page/screen/sample'
 export default function LandingPage() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>BufferOverflow</title>
-        <meta name="description" content="Sass Service creator" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
 
       <main className={styles.main}>
         <Header />
