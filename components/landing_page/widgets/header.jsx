@@ -10,7 +10,28 @@ function header() {
                 </Link>
             </div>
             <header className={styles.header}>
-            
+                {/* <nav className={styles.nav}>
+                    <button className={styles.nav_toggle}>
+                        <span className={styles.hamburger}></span>
+                    </button>
+                    <ul className={styles.nav_list}>
+                        <li className={styles.nav_item}>
+                            <a className={styles.nav_link} href="#">
+                                link
+                            </a>
+                        </li>
+                        <li className={styles.nav_item}>
+                            <a className={styles.nav_link} href="#">
+                                link
+                            </a>
+                        </li>
+                        <li className={styles.nav_item}>
+                            <a className={styles.nav_link} href="#">
+                                link
+                            </a>
+                        </li>
+                    </ul>
+                </nav > */}
                 <Link href="/" passHref>
                     <span className={styles.logo}>
                         BufferOverflow
@@ -27,7 +48,7 @@ function header() {
                         Support
                     </Link>
                 </nav>
-                <nav>
+                <nav className={styles.right_nav}>
                     <Link href="/signin" passHref>
                         Login
                     </Link>
@@ -37,6 +58,9 @@ function header() {
                         </Link>
                     </button>
                 </nav>
+                <div className={styles.button}>
+
+                </div>
             </header>
         </div>
     )
