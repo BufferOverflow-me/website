@@ -79,7 +79,11 @@ $color-footer: #222222;
              :hover,
              :active,
              :focus {
-                text-decoration: underline;
+                color: #23e2ce;
+            }
+            span {
+                color: $color-primary;
+                transition: all 300ms ease-in;
             }
         }
         .desc {
