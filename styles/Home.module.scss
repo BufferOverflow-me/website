@@ -45,8 +45,10 @@ $clr-card: #222222;
             border: none;
             // Transition
             transition: all 300ms ease-in-out;
+             :focus,
+             :active,
              :hover {
-                background: -webkit-radial-gradient($text-gradient);
+                background: -webkit-radial-gradient($color-gradient);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
