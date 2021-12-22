@@ -14,11 +14,11 @@ const myFeature = [
     {
         title: 'Feature',
         desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
+
     },
     {
         title: 'Feature',
         desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
-
     },
     {
         title: 'Feature',

@@ -71,13 +71,12 @@ $clr-card: #222222;
     .mainSection {
         text-align: center;
         color: $color-text;
-        margin-top: 10%;
-        // height: 50%;
+        margin-top: 3rem;
         .title {
             font-weight: bold;
             margin: 0.625rem;
-            // line-height: 1.15;Interactively
             font-size: 4rem;
+            font-size: clamp(1rem, 3vw + 2rem, 4rem);
              :hover,
              :active,
              :focus {
@@ -92,7 +91,7 @@ $clr-card: #222222;
             width: 45%;
             font-weight: 400;
             margin: 5px auto 60px;
-            font-size: 1.125rem;
+            font-size: clamp(1rem, 2.5vw, 2rem);
             line-height: 01.55rem;
         }
         button {
@@ -104,7 +103,7 @@ $clr-card: #222222;
             padding: 0.625rem 3.125rem;
             text-decoration: none;
             border: none;
-            margin-bottom: 5%;
+            margin-bottom: 2rem;
             user-select: none;
             cursor: pointer;
              :hover {
@@ -127,7 +126,21 @@ $clr-card: #222222;
         @media (max-width: 1000px) {
             .img,
             .myImage {
-                display: none;
+                height: 400px;
+            }
+            button {
+                font-size: 1rem;
+                padding: 0.225rem 2.5rem;
+                border-radius: 0.225rem;
+            }
+            .desc {
+                width: 60%;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            .desc {
+                font-weight: 500;
+                font-size: 1.5rem;
             }
         }
     }
