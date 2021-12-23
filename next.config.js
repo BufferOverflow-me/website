@@ -9,7 +9,8 @@ module.exports = {
     },
     images: {
         domains: [
-            'images.unsplash.com'
+            'images.unsplash.com',
+            'media.istockphoto.com'
         ]
     }
 }
