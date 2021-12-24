@@ -14,41 +14,60 @@ function footer() {
                         <ul>
                             {/* <li><FontAwesomeIcon icon={['fab','facebook']}/></li> */}
                             <li>
-                                <Image
+                                <a href="http://">
+                                    <Image
                                 src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
                                 width={30}
                                 height={30}
                                 alt='Facebook'
                                 title='Follow us on facebook'
-                            /></li>
-                            <li><Image
+                            />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://">
+                                    <Image
                                 src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"
                                 width={30}
                                 height={30}
                                 alt='Instagram'
                                 title='Follow us on instagram'
-                            /></li>
-                            <li><Image
+                            />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://">
+                                    <Image
                                 src="https://img.icons8.com/color/48/000000/github--v1.png"
                                 width={30}
                                 height={30}
                                 alt='GitHub'
                                 title='Follow us on github'
-                            /></li>
-                            <li><Image
+                            />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://">
+                                    <Image
                                 src="https://img.icons8.com/color/48/000000/twitter-circled.png"
                                 width={30}
                                 height={30}
                                 alt='Twitter'
                                 title='Follow us on twitter'
-                            /></li>
-                            <li><Image
+                            />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://">
+                                    <Image
                                 src="https://img.icons8.com/color/48/000000/youtube-play.png"
                                 width={30}
                                 height={30}
                                 alt='YouTube'
                                 title='Subscribe us on YouTube'
-                            /></li>
+                            />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

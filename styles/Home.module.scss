@@ -383,6 +383,11 @@ sampleSection
             align-content: flex-start;
         }
     }
+    @media (max-width: 550px) {
+        .Container {
+            flex-direction: row;
+        }
+    }
     @media (max-width: 1435px) {
         .Container {
             justify-content: flex-start;
