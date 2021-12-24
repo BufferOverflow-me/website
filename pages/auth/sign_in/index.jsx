@@ -1,10 +1,14 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useAuth } from "../../utils/context/authUserContext";
-import { Container, Row, Col, Button, Form, FormGroup, Label, Input, Alert } from "react-dom";
+import { useAuth } from "../../../utils/context/authUserContext";
+import { Row, Col, Button, Form, FormGroup, Label, Input, Alert } from "reactstrap";
 
-export default function Index() {
+
+import React from 'react'
+
+const Signin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
@@ -25,7 +29,8 @@ export default function Index() {
         event.preventDefault();
     };
     return (
-        <Container className="text-center" style={{ padding: '40px 0px' }}>
+        // eslint-disable-next-line react/jsx-no-undef
+        <div className="text-center" style={{ padding: '40px 0px' }}>
             <Row>
                 <Col>
                     <h2>Login</h2>
@@ -66,12 +71,14 @@ export default function Index() {
                         </FormGroup>
                         <FormGroup row>
                             <Col>
-                                No account? <Link href="/sign_up">Create one</Link>
+                                No account? <Link href="/auth/sign_up">Create one</Link>
                             </Col>
                         </FormGroup>
                     </Form>
                 </Col>
             </Row>
-        </Container>
+        </div>
     );
 }
+
+export default Signin
