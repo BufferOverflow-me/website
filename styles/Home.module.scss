@@ -6,6 +6,17 @@ $color-gradient: (#021aee, #d602ee);
 $text-gradient: (#23e2ce, #e22336);
 $color-footer: #222222;
 $clr-card: #222222;
+
+/*
+container that contain
+Header
+main class and
+Main Component and
+footer
+featureSection
+sampleSection
+*/
+
 .container {
     padding: 0;
 }
@@ -290,11 +301,10 @@ $clr-card: #222222;
 }
 
 .footer {
+    text-align: center;
     align-items: center;
     background-color: $color-footer;
-    display: flex;
     flex: 1;
-    justify-content: center;
     padding: 2rem 0;
     flex-direction: column;
     color: $color-text;
@@ -310,6 +320,46 @@ $clr-card: #222222;
     span {
         padding: 0.625rem 0 20px;
         margin: 0.625rem 0;
+    }
+    .Container {
+        // margin: auto 5%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+        .leftdiv {
+            text-align: left;
+            width: 25%;
+            div {
+                text-align: center;
+                ul {
+                    list-style: none;
+                    text-align: left;
+                    // margin-left: 0;
+                    padding-left: 0;
+                    li {
+                        display: inline-block;
+                        padding: 3%;
+                        // padding-left: 0;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        .row {
+            display: flex;
+            .col {
+                ul {
+                    margin-right: 4%;
+                    list-style: none;
+                    text-align: left;
+                    li {
+                        width: max-content;
+                    }
+                }
+            }
+        }
     }
 }
 
