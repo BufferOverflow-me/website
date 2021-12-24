@@ -49,11 +49,11 @@ function header() {
                     </Link>
                 </nav>
                 <nav className={styles.right_nav}>
-                    <Link href="/signin" passHref>
+                    <Link href="/sign_in" passHref>
                         Login
                     </Link>
                     <button>
-                        <Link href="/signup" passHref>
+                        <Link href="/sign_up" passHref>
                             Create Account
                         </Link>
                     </button>
