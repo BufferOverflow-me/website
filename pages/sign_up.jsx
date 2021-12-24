@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-import { useAuth } from '../context/AuthUserContext';
-
+import { useAuth } from '../context/authUserContext';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 
 const SignUp = () => {

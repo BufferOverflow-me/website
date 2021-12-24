@@ -22,6 +22,8 @@ export default function useProvideAuth() {
     const handleUser = async (rawUser) => {
         if (rawUser) {
             const user = await formatUser(rawUser);
+            // Print the token to the console for testing purposes
+            console.log(user);
             const { token, ...userWithoutToken } = user;
             setUser(user);
             cookie.set('bufferoverflow-auth', true, {
