@@ -323,12 +323,12 @@ sampleSection
     }
     .Container {
         margin: auto;
-        padding: 5%;
+        padding: 3% 0 1%;
         display: flex;
         flex-wrap: wrap;
         align-content: center;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-evenly;
+        align-items: stretch;
         width: 90%;
         .leftdiv {
             text-align: left;
@@ -341,7 +341,6 @@ sampleSection
                 ul {
                     list-style: none;
                     text-align: left;
-                    // margin-left: 0;
                     padding-left: 0;
                     li {
                         display: inline-block;
@@ -356,6 +355,7 @@ sampleSection
             display: flex;
             .col {
                 ul {
+                    padding: 0px 40px;
                     margin: 5% 0%;
                     width: max-content;
                     list-style: none;
@@ -367,6 +367,25 @@ sampleSection
                     }
                 }
             }
+        }
+        @media (max-width: 1024px) {
+            .row {
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .Container {
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+    }
+    @media (max-width: 1435px) {
+        .Container {
+            justify-content: flex-start;
         }
     }
 }
