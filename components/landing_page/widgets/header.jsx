@@ -15,6 +15,9 @@ function header() {
                         BufferOverflow
                     </span>
                 </Link>
+                {/* <div className={styles.button}>
+
+                </div> */}
                 <nav className={styles.mid}>
                     <Link href="#Overview" passHref>
                         Overview
@@ -36,9 +39,7 @@ function header() {
                         </Link>
                     </button>
                 </nav>
-                <div className={styles.button}>
 
-                </div>
             </header>
         </div>
     )
