@@ -18,31 +18,31 @@ function Header() {
           skip navigation
         </Link>
       </div>
-      <header className={drawer ?  styles.mobActNav : styles.header}>
+      <header className={styles.header}>
         <Link href="/" passHref>
           <span className={styles.logo}>BufferOverflow</span>
         </Link>
-        <button className={"button text-2xl text-black dark:text-white lg:hidden absolute top-6 right-5 "} onClick={checkState}><i className="fa fa-bars"></i></button>
+        <button className={"button text-2xl text-black dark:text-white lg:hidden absolute top-6 right-8 "} onClick={checkState}><i className="fa fa-bars"></i></button>
 <div className={`${drawer ? styles.show : 'hidden'}`}>
           <div className={styles.mobnav}>
             <Link href="/" >
-              <a className="m-2 hover:text-violet-400">
-                Home
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg ">
+                Overview
               </a>
             </Link>
             <Link href="/">
-              <a className="m-2 hover:text-violet-400">
-                Services
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg">
+                Blog
               </a>
             </Link>
             <Link href="/">
-              <a className="m-2 hover:text-violet-400">
-                About us
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg ">
+                Support
               </a>
             </Link>
             <Link href="/">
-              <a className="m-2 hover:text-violet-400">
-                Contact us
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg">
+                Sign in
               </a>
             </Link>
           </div>
