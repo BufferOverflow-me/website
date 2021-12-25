@@ -18,11 +18,11 @@ function Header() {
           skip navigation
         </Link>
       </div>
-      <header className={`${drawer ? styles.mobActNav : styles.header}`}>
+      <header className={drawer ?  styles.mobActNav : styles.header}>
         <Link href="/" passHref>
           <span className={styles.logo}>BufferOverflow</span>
         </Link>
-        <button className={styles.button} onClick={checkState}><i className="fa fa-bars"></i></button>
+        <button className={styles.button, "text-black dark:text-white lg:hidden"} onClick={checkState}><i className="fa fa-bars"></i></button>
 
         <nav className={styles.mid}>
           <Link href="#Overview" passHref>
