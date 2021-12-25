@@ -6,12 +6,29 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
 import { AuthUserProvider } from '../context/authUserContext';
+import { ThemeProvider } from 'next-themes';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+      :root {
+        --fg: #000;
+        --bg: #fff;
+      }
+
+      [data-theme="dark"] {
+        --fg: #fff;
+        --bg: #000;
+      }
+`
 function MyApp({ Component, pageProps }) {
   return (
     <>
+    <GlobalStyle />
       <Head />
       <AuthUserProvider>
-        <Component {...pageProps} />
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
       </AuthUserProvider>
     </>
   );
