@@ -22,8 +22,31 @@ function Header() {
         <Link href="/" passHref>
           <span className={styles.logo}>BufferOverflow</span>
         </Link>
-        <button className={styles.button, "text-black dark:text-white lg:hidden"} onClick={checkState}><i className="fa fa-bars"></i></button>
-
+        <button className={"button text-2xl text-black dark:text-white lg:hidden absolute top-6 right-5 "} onClick={checkState}><i className="fa fa-bars"></i></button>
+<div className={`${drawer ? styles.show : 'hidden'}`}>
+          <div className={styles.mobnav}>
+            <Link href="/" >
+              <a className="m-2 hover:text-violet-400">
+                Home
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="m-2 hover:text-violet-400">
+                Services
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="m-2 hover:text-violet-400">
+                About us
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="m-2 hover:text-violet-400">
+                Contact us
+              </a>
+            </Link>
+          </div>
+          </div>
         <nav className={styles.mid}>
           <Link href="#Overview" passHref>
             Overview
@@ -45,30 +68,7 @@ function Header() {
             </Link>
           </button>
         </nav>
-        <div className={`${drawer ? styles.show : 'hidden'}`}>
-          <div className={styles.mobnav}>
-            <Link href="/">
-              <a >
-                Home
-              </a>
-            </Link>
-            <Link href="/">
-              <a >
-                Services
-              </a>
-            </Link>
-            <Link href="/">
-              <a >
-                About us
-              </a>
-            </Link>
-            <Link href="/">
-              <a >
-                Contact us
-              </a>
-            </Link>
-          </div>
-          </div>
+
       </header>
 
 
