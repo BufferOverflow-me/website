@@ -11,13 +11,15 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
 import '../styles/globals.scss';
-import {AuthUserProvider} from '../context/authUserContext';
+import { CssBaseline } from '@nextui-org/react';
+import { AuthUserProvider } from '../context/authUserContext';
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head />
       <AuthUserProvider>
-      <Component {...pageProps} />
+        <CssBaseline />
+        <Component {...pageProps} />
       </AuthUserProvider>
     </>
   );
