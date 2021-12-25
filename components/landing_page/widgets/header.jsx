@@ -1,12 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../../../styles/Home.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+
+
 function Header() {
   const [active, setActive] = useState(false);
   const checkState = () => {
     setActive(!active);
-    console.log(active);
   };
   return (
     <div>
@@ -19,7 +21,7 @@ function Header() {
         <Link href="/" passHref>
           <span className={styles.logo}>BufferOverflow</span>
         </Link>
-        <button className={styles.button} onClick={checkState}>button</button>
+        <button className={styles.button} onClick={checkState}><i className="fa fa-bars"></i></button>
 
         <nav className={styles.mid}>
           <Link href="#Overview" passHref>
