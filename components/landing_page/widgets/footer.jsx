@@ -1,105 +1,156 @@
-import React from 'react'
-import styles from '../../../styles/Home.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import styles from '../../../styles/Home.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 function footer() {
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.Container}>
+        <div className={styles.leftdiv}>
+          <h1>BufferOverflow</h1>
+          <p>Develop application or wordpress themese in just few clicks.</p>
+          <div>
+            <ul>
+              <li>
+                <a href="http://">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_25_131)">
+                      <path
+                        d="M50 25.1531C50 11.2593 38.8063 -0.00317383 25 -0.00317383C11.1875 -4.8828e-05 -0.00622559 11.2593 -0.00622559 25.1562C-0.00622559 37.7093 9.13752 48.1156 21.0875 50.0031V32.425H14.7438V25.1562H21.0938V19.6093C21.0938 13.3062 24.8281 9.82495 30.5375 9.82495C33.275 9.82495 36.1344 10.3156 36.1344 10.3156V16.5031H32.9813C29.8781 16.5031 28.9094 18.4437 28.9094 20.4343V25.1531H35.8406L34.7344 32.4218H28.9063V49.9999C40.8563 48.1124 50 37.7062 50 25.1531Z"
+                        fill="#F5F5F5"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_25_131">
+                        <rect width="50" height="50" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="http://">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 18.4912C21.416 18.4912 18.4912 21.416 18.4912 25C18.4912 28.584 21.416 31.5088 25 31.5088C28.584 31.5088 31.5088 28.584 31.5088 25C31.5088 21.416 28.584 18.4912 25 18.4912ZM44.5215 25C44.5215 22.3047 44.5459 19.6338 44.3945 16.9433C44.2432 13.8183 43.5303 11.0449 41.2451 8.75975C38.9551 6.46971 36.1865 5.76171 33.0615 5.61034C30.3662 5.45897 27.6953 5.48339 25.0049 5.48339C22.3096 5.48339 19.6387 5.45897 16.9482 5.61034C13.8232 5.76171 11.0498 6.4746 8.76464 8.75975C6.4746 11.0498 5.76659 13.8183 5.61522 16.9433C5.46385 19.6387 5.48827 22.3096 5.48827 25C5.48827 27.6904 5.46385 30.3662 5.61522 33.0566C5.76659 36.1816 6.47948 38.9551 8.76464 41.2402C11.0547 43.5303 13.8232 44.2383 16.9482 44.3896C19.6435 44.541 22.3144 44.5166 25.0049 44.5166C27.7002 44.5166 30.3711 44.541 33.0615 44.3896C36.1865 44.2383 38.9599 43.5254 41.2451 41.2402C43.5351 38.9502 44.2432 36.1816 44.3945 33.0566C44.5508 30.3662 44.5215 27.6953 44.5215 25V25ZM25 35.0146C19.458 35.0146 14.9853 30.542 14.9853 25C14.9853 19.458 19.458 14.9853 25 14.9853C30.542 14.9853 35.0146 19.458 35.0146 25C35.0146 30.542 30.542 35.0146 25 35.0146ZM35.4248 16.914C34.1308 16.914 33.0859 15.8691 33.0859 14.5752C33.0859 13.2812 34.1308 12.2363 35.4248 12.2363C36.7187 12.2363 37.7637 13.2812 37.7637 14.5752C37.764 14.8824 37.7038 15.1867 37.5864 15.4707C37.469 15.7546 37.2967 16.0126 37.0795 16.2299C36.8622 16.4471 36.6042 16.6194 36.3203 16.7368C36.0364 16.8542 35.732 16.9144 35.4248 16.914V16.914Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="http://">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 3.125C12.9199 3.125 3.125 12.9199 3.125 25C3.125 37.0801 12.9199 46.875 25 46.875C37.0801 46.875 46.875 37.0801 46.875 25C46.875 12.9199 37.0801 3.125 25 3.125ZM35.5127 19.6143C35.5273 19.8438 35.5273 20.083 35.5273 20.3174C35.5273 27.4854 30.0684 35.7422 20.0928 35.7422C17.0166 35.7422 14.165 34.8486 11.7627 33.3105C12.2021 33.3594 12.6221 33.3789 13.0713 33.3789C15.6104 33.3789 17.9443 32.5195 19.8047 31.0645C17.4219 31.0156 15.4199 29.4531 14.7363 27.3047C15.5713 27.4268 16.3232 27.4268 17.1826 27.207C15.9557 26.9578 14.8529 26.2914 14.0616 25.3212C13.2703 24.351 12.8393 23.1368 12.8418 21.8848V21.8164C13.5596 22.2217 14.4043 22.4707 15.2881 22.5049C14.5451 22.0097 13.9358 21.3389 13.5142 20.5519C13.0926 19.7649 12.8717 18.886 12.8711 17.9932C12.8711 16.9824 13.1348 16.0596 13.6084 15.2588C14.9702 16.9352 16.6696 18.3064 18.596 19.283C20.5225 20.2597 22.6329 20.8201 24.79 20.9277C24.0234 17.2412 26.7773 14.2578 30.0879 14.2578C31.6504 14.2578 33.0566 14.9121 34.0479 15.9668C35.2734 15.7373 36.4453 15.2783 37.4902 14.6631C37.085 15.918 36.2354 16.9775 35.1074 17.6465C36.2012 17.5293 37.2559 17.2266 38.2324 16.8018C37.4951 17.8857 36.5723 18.8477 35.5127 19.6143V19.6143Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="http://">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M25 0C11.1875 0 0 11.1875 0 25C0 36.0625 7.15625 45.4062 17.0937 48.7187C18.3437 48.9375 18.8125 48.1875 18.8125 47.5312C18.8125 46.9375 18.7812 44.9687 18.7812 42.875C12.5 44.0312 10.875 41.3437 10.375 39.9375C10.0937 39.2187 8.875 37 7.8125 36.4062C6.9375 35.9375 5.6875 34.7812 7.78125 34.75C9.75 34.7187 11.1562 36.5625 11.625 37.3125C13.875 41.0937 17.4687 40.0312 18.9062 39.375C19.125 37.75 19.7812 36.6562 20.5 36.0312C14.9375 35.4062 9.125 33.25 9.125 23.6875C9.125 20.9687 10.0937 18.7188 11.6875 16.9688C11.4375 16.3438 10.5625 13.7812 11.9375 10.3437C11.9375 10.3437 14.0312 9.6875 18.8125 12.9062C20.8125 12.3437 22.9375 12.0625 25.0625 12.0625C27.1875 12.0625 29.3125 12.3437 31.3125 12.9062C36.0937 9.65625 38.1875 10.3437 38.1875 10.3437C39.5625 13.7812 38.6875 16.3438 38.4375 16.9688C40.0313 18.7188 41 20.9375 41 23.6875C41 33.2812 35.1562 35.4062 29.5937 36.0312C30.5 36.8125 31.2812 38.3125 31.2812 40.6562C31.2812 44 31.25 46.6875 31.25 47.5312C31.25 48.1875 31.7187 48.9687 32.9687 48.7187C37.9316 47.0432 42.2441 43.8535 45.2993 39.5987C48.3545 35.3439 49.9985 30.2381 50 25C50 11.1875 38.8125 0 25 0Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="http://">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25 5.75C0.43 5.75 0 7.935 0 25C0 42.065 0.43 44.25 25 44.25C49.57 44.25 50 42.065 50 25C50 7.935 49.57 5.75 25 5.75ZM33.0125 25.835L21.7875 31.075C20.805 31.53 20 31.02 20 29.935V20.065C20 18.9825 20.805 18.47 21.7875 18.925L33.0125 24.165C33.995 24.625 33.995 25.375 33.0125 25.835Z"
+                      fill="#F5F5F5"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.col}>
+            <ul>
+              <h3>PRODUCT</h3>
+              <li>Coding</li>
+              <li>Prototyping</li>
+              <li>Knowledge Sharing</li>
+              <li>Feedback</li>
+              <li>What’s New </li>
+            </ul>
+          </div>
+          <div className={styles.col}>
+            <ul>
+              <h3>COMPANY</h3>
+              <li>Blogs</li>
+              <li>Careers</li>
+              <li>Write On BufferOverflow</li>
+              <li>Refer & Earn</li>
+            </ul>
+          </div>
+          <div className={styles.col}>
+            <ul>
+              <h3>LEGAL</h3>
+              <li>Privacy</li>
+              <li>Terms</li>
+            </ul>
+          </div>
+          <div className={styles.col}>
+            <ul>
+              <h3>SUPPORT</h3>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    return (
-        <footer className={styles.footer}>
-            <div className={styles.Container}>
-                <div className={styles.leftdiv}>
-                    <h1>BufferOverflow</h1>
-                    <p>Develop application or wordpress themese in just few clicks.</p>
-                    <div>
-                        <ul>
-
-                            <li>
-                                <a href="http://">
-
-                                    <i className="fab fa-twitter" alt='Twitter'
-                                title='Follow us on twitter'></i>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://">
-                                <i className="fab fa-facebook" alt='Facebook'
-                                title='Follow us on facebook'></i>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://">
-                                <i className="fab fa-instagram" alt='Instagram'
-                                title='Follow us on instagram'></i>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://">
-                                <i className="fab fa-github" alt='GitHub'
-                                title='Follow us on github'></i>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://">
-                                <i className="fab fa-youtube" alt='YouTube'
-                                title='Subscribe us on YouTube'></i>
-
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.col}>
-                        <ul>
-                    <h3>PRODUCT</h3>
-                            <li>Coding</li>
-                            <li>Prototyping</li>
-                            <li>Knowledge Sharing</li>
-                            <li>Feedback</li>
-                            <li>What’s New </li>
-                        </ul>
-                    </div>
-                    <div className={styles.col}>
-                    <ul>
-                    <h3>COMPANY</h3>
-                            <li>Blogs</li>
-                            <li>Careers</li>
-                            <li>Write On BufferOverflow</li>
-                            <li>Refer & Earn</li>
-                        </ul>
-                    </div>
-                    <div className={styles.col}>
-                    <ul>
-                    <h3>LEGAL</h3>
-                            <li>Privacy</li>
-                            <li>Terms</li>
-                        </ul>
-                    </div>
-                    <div className={styles.col}>
-                    <ul>
-                    <h3>SUPPORT</h3>
-                            <li>Contact Us</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <hr />
-            <a
-                href="https://BufferOverflow.me"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <span className={styles.logo}>
-                © BufferOverflow 2021 | All rights reserved
-                </span>
-            </a>
-        </footer>
-    );
+      <hr />
+      <a
+        href="https://BufferOverflow.me"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className={styles.logo}>
+          © BufferOverflow 2021 | All rights reserved
+        </span>
+      </a>
+    </footer>
+  );
 }
 
 export default footer;

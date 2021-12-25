@@ -1,10 +1,5 @@
 import '../styles/globals.scss'
 import Head from '../components/head'
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fab } from '@fortawesome/js/brands'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-// library.add(fab,faCoffee)
-
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
