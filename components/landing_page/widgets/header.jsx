@@ -3,11 +3,11 @@ import Link from 'next/link';
 import styles from '../../../styles/Home.module.scss';
 import { useState } from 'react';
 function Header() {
-  const [active, setActive] = useState(false);
+  const [drawer, setDrawer] = useState(false);
   const checkState = () => {
-    setActive(!active);
-    console.log(active);
+    setDrawer(!drawer);
   };
+
   return (
     <div>
       <div className={styles.skip}>
@@ -15,7 +15,7 @@ function Header() {
           skip navigation
         </Link>
       </div>
-      <header className={`${active ? styles.mobActNav : styles.header}`}>
+      <header className={`${drawer ? styles.mobActNav : styles.header}`}>
         <Link href="/" passHref>
           <span className={styles.logo}>BufferOverflow</span>
         </Link>
@@ -42,7 +42,7 @@ function Header() {
             </Link>
           </button>
         </nav>
-        <div className={`${active ? styles.show : 'hidden'}`}>
+        <div className={`${drawer ? styles.show : 'hidden'}`}>
           <div className={styles.mobnav}>
             <Link href="/">
               <a >
