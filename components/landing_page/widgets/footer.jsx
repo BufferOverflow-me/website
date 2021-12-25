@@ -3,13 +3,35 @@ import styles from '../../../styles/Home.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
-const PRODUCT =[
+const PRODUCT = [
   "Coding",
   "Prototyping",
   "Knowledge Sharing",
   "Feedback",
   "What’s New"
 ];
+// "PRODUCT",
+//   "COMPANY",
+//   "LEGAL",
+//   "SUPPORT",
+const footerArray = [
+  {
+    title: "PRODUCT",
+    list: PRODUCT
+  },
+  {
+    title: "COMPANY",
+    list: ["About", "Blog", "Careers", "Press", "Team"]
+  },
+  {
+    title: "LEGAL",
+    list: ["Terms", "Privacy", "Cookies", "Ad Choices"]
+  },
+  {
+    title: "SUPPORT",
+    list: ["Help Center", "Forums", "Status", "Contact"]
+  }
+]
 function footer() {
   return (
     <footer className={styles.footer}>
