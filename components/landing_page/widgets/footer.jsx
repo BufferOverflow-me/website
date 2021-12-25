@@ -2,6 +2,14 @@ import React from 'react';
 import styles from '../../../styles/Home.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
+
+const PRODUCT =[
+  "Coding",
+  "Prototyping",
+  "Knowledge Sharing",
+  "Feedback",
+  "What’s New"
+];
 function footer() {
   return (
     <footer className={styles.footer}>
@@ -111,11 +119,11 @@ function footer() {
           <div className={styles.col}>
             <ul>
               <h3>PRODUCT</h3>
-              <li>Coding</li>
-              <li>Prototyping</li>
-              <li>Knowledge Sharing</li>
-              <li>Feedback</li>
-              <li>What’s New </li>
+              {PRODUCT.map((item, index) => (
+                <li key={index}>
+                  <a href="http://">{item}</a>
+                </li>
+              ))}
             </ul>
           </div>
           <div className={styles.col}>
