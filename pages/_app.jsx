@@ -11,13 +11,13 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
       :root {
-        --fg: #000;
-        --bg: #fff;
+        --fg: #222222;
+        --bg: #fbfbfb;
       }
 
       [data-theme="dark"] {
-        --fg: #fff;
-        --bg: #000;
+        --fg: #fbfbfb;
+        --bg: #222222;
       }
 `
 function MyApp({ Component, pageProps }) {
