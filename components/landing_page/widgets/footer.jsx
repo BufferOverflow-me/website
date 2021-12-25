@@ -15,57 +15,63 @@ function footer() {
                             {/* <li><FontAwesomeIcon icon={['fab','facebook']}/></li> */}
                             <li>
                                 <a href="http://">
-                                    <Image
+
+                                    <i className="fab fa-twitter" alt='Twitter'
+                                title='Follow us on twitter'></i>
+                                    {/* <Image
                                 src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
                                 width={30}
                                 height={30}
-                                alt='Facebook'
-                                title='Follow us on facebook'
-                            />
+
+                            /> */}
                                 </a>
                             </li>
                             <li>
                                 <a href="http://">
-                                    <Image
+                                <i className="fab fa-facebook" alt='Facebook'
+                                title='Follow us on facebook'></i>
+                                   {/* <Image
                                 src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"
                                 width={30}
                                 height={30}
-                                alt='Instagram'
-                                title='Follow us on instagram'
-                            />
+
+                            /> */}
                                 </a>
                             </li>
                             <li>
                                 <a href="http://">
-                                    <Image
-                                src="https://img.icons8.com/color/48/000000/github--v1.png"
+                                <i className="fab fa-instagram" alt='Instagram'
+                                title='Follow us on instagram'></i>
+                                    {/* <Image
+                                src="https://img.icons8.com/material/48/ffffff/github.png"
                                 width={30}
                                 height={30}
-                                alt='GitHub'
-                                title='Follow us on github'
-                            />
+
+                            /> */}
                                 </a>
                             </li>
                             <li>
                                 <a href="http://">
-                                    <Image
-                                src="https://img.icons8.com/color/48/000000/twitter-circled.png"
+                                <i className="fab fa-github" alt='GitHub'
+                                title='Follow us on github'></i>
+                                    {/* <Image
+                                src="https://img.icons8.com/material/48/ffffff/twitter-squared.png"
                                 width={30}
                                 height={30}
-                                alt='Twitter'
-                                title='Follow us on twitter'
-                            />
+
+                            /> */}
                                 </a>
                             </li>
                             <li>
                                 <a href="http://">
-                                    <Image
-                                src="https://img.icons8.com/color/48/000000/youtube-play.png"
+                                <i className="fab fa-youtube" alt='YouTube'
+                                title='Subscribe us on YouTube'></i>
+                                    {/* <Image
+                                src="https://img.icons8.com/material/48/ffffff/youtube-play--v1.png"
                                 width={30}
                                 height={30}
-                                alt='YouTube'
-                                title='Subscribe us on YouTube'
-                            />
+
+                            /> */}
                                 </a>
                             </li>
                         </ul>

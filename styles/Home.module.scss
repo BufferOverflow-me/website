@@ -23,7 +23,6 @@ sampleSection
 
 .header {
     padding: 1.5rem;
-    padding-top: 5%;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
@@ -189,7 +188,7 @@ sampleSection
     .card:hover,
     .card:focus,
     .card:active {
-        transform: scale(1.1);
+        transform: scale(1.02);
         background-color: rgba(0, 0, 0);
     }
     .card {
@@ -201,9 +200,9 @@ sampleSection
         color: $color-text;
         border-radius: .8rem;
         transition: all 0.15s ease;
-        max-width: 275px;
+        max-width: 270px;
         min-height: 230px;
-        transition: all 600ms ease-in-out;
+        transition: all 200ms ease-in-out;
         user-select: none;
         box-shadow: 12px 14px 20px 0px rgb(56 50 50 / 33%);
         .cardTitle {
@@ -218,7 +217,7 @@ sampleSection
             color: lightgray;
         }
         .cardHr {
-            margin: 0px 0px 2rem;
+            margin: 0px 0px 1rem;
             border: none;
             border-top: 5px solid;
             border-radius: 10px;
@@ -347,6 +346,11 @@ sampleSection
                         padding: 3%;
                         // padding-left: 0;
                         font-size: 1.5rem;
+                        a {
+                            .icon {
+                                font-size: 1rem;
+                            }
+                        }
                     }
                 }
             }
