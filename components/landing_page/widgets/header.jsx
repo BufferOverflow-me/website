@@ -4,7 +4,6 @@ import styles from '../../../styles/Home.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
-
 function Header() {
   const [drawer, setDrawer] = useState(false);
   const checkState = () => {
@@ -22,31 +21,17 @@ function Header() {
         <Link href="/" passHref>
           <span className={styles.logo}>BufferOverflow</span>
         </Link>
-        <button className={"button text-2xl text-black dark:text-white lg:hidden absolute top-6 right-8 "} onClick={checkState}><i className="fa fa-bars"></i></button>
-<div className={`${drawer ? styles.show : 'hidden'}`}>
-          <div className={styles.mobnav}>
-            <Link href="/" >
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg ">
-                Overview
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg">
-                Blog
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg ">
-                Support
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg">
-                Sign in
-              </a>
-            </Link>
-          </div>
-          </div>
+        <button
+          className={
+            'button text-2xl text-black dark:text-white h-auto lg:hidden absolute top-6 right-8 '
+          }
+          onClick={checkState}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+        </button>
+
         <nav className={styles.mid}>
           <Link href="#Overview" passHref>
             Overview
@@ -68,11 +53,31 @@ function Header() {
             </Link>
           </button>
         </nav>
-
       </header>
-
-
-
+      <div className={`${drawer ? styles.show : 'hidden'}`}>
+          <div className={styles.mobnav}>
+            <Link href="/">
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
+                Overview
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
+                Blog
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
+                Support
+              </a>
+            </Link>
+            <Link href="/">
+              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
+                Sign in
+              </a>
+            </Link>
+          </div>
+        </div>
     </div>
   );
 }
