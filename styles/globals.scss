@@ -40,3 +40,19 @@ a {
 .hidden {
     height: 0;
 }
+
+.divider {
+    height: 5px;
+    color: rgb(192, 195, 201);
+    overflow: visible;
+}
+
+.divider::after {
+    content: 'Or';
+    color: inherit;
+    background: #fff;
+    padding: 0 5px;
+    position: relative;
+    top: -9px;
+    // z-index: 1;
+}
