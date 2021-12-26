@@ -43,14 +43,15 @@ a {
 
 .divider {
     height: 5px;
-    color: rgb(192, 195, 201);
+    border-color: rgb(131, 133, 136);
+    color: rgb(131, 133, 136);
     overflow: visible;
 }
 
 .divider::after {
     content: 'Or';
     color: inherit;
-    background: #fff;
+    background: #222;
     padding: 0 5px;
     position: relative;
     top: -9px;
