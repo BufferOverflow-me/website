@@ -116,7 +116,7 @@ export default function Home() {
             Login
           </button>
           <hr className="hr text-center mx-auto my-5 w-3/4 hr border-0 border-b-4 rounded-t-2 divider " />
-          <a  href="">
+          <a onClick={google}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
