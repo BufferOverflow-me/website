@@ -228,14 +228,13 @@ sampleSection
 
 .featureSection {
     height: auto;
-    // background-color: $color-background;
     text-align: center;
     h1 {
         margin: 8rem auto 1rem;
         width: 65%;
         font-size: clamp(1rem, 3vw + 2rem, 4rem);
         font-weight: 600;
-        line-height: 2.5rem;
+        line-height: 3.5rem;
         padding: 4%;
     }
     .grid {
@@ -247,7 +246,7 @@ sampleSection
         margin: auto;
     }
     .desc {
-        width: 75%;
+        width: 60%;
         font-weight: 400;
         margin: 5px auto 60px;
         font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
@@ -378,11 +377,8 @@ sampleSection
     user-select: none;
     hr {
         width: 88%;
-    }
-    a {
-        align-items: center;
-        display: flex;
-        justify-content: center;
+        margin: auto;
+        padding: 10px 0;
     }
     span {
         padding: 0.625rem 0 20px;
@@ -400,7 +396,7 @@ sampleSection
         .leftdiv {
             text-align: left;
             width: max-content;
-            margin-bottom: 10%;
+            margin-bottom: 5%;
             p {
                 width: 90%;
             }
@@ -412,7 +408,7 @@ sampleSection
                     padding-left: 0;
                     li {
                         display: inline-block;
-                        padding: 3%;
+                        padding: 5%;
                         padding-left: 0;
                         font-size: 1.5rem;
                         a {
@@ -427,6 +423,7 @@ sampleSection
         .row {
             display: flex;
             .col {
+                margin-right: 5%;
                 ul {
                     padding: 0px 40px;
                     margin: 5% 0%;

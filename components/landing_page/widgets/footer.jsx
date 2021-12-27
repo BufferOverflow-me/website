@@ -3,21 +3,17 @@ import styles from '../../../styles/Home.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 
-const PRODUCT = [
-  "Coding",
-  "Prototyping",
-  "Knowledge Sharing",
-  "Feedback",
-  "What’s New"
-];
-// "PRODUCT",
-//   "COMPANY",
-//   "LEGAL",
-//   "SUPPORT",
+
 const footerArray = [
   {
     title: "PRODUCT",
-    list: PRODUCT
+    list: [
+      "Coding",
+      "Prototyping",
+      "Knowledge Sharing",
+      "Feedback",
+      "What’s New"
+    ]
   },
   {
     title: "COMPANY",
@@ -37,12 +33,12 @@ function footer() {
     <footer className={styles.footer}>
       <div className={styles.Container}>
         <div className={styles.leftdiv}>
-          <h1>BufferOverflow</h1>
-          <p>Develop application or wordpress themese in just few clicks.</p>
+          <h1 className=" text-4xl mb-5 font-bold">BufferOverflow</h1>
+          <p className={"font-thin text-gray-400"}>Develop application or wordpress themese in just few clicks.</p>
           <div>
             <ul>
               <li>
-                <a href="http://">
+                <a title='Follow Us of Facebook' href="http://">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -58,7 +54,7 @@ function footer() {
                 </a>
               </li>
               <li>
-                <a href="http://">
+                <a title='Follow Us of Instagram' href="http://">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -88,7 +84,7 @@ function footer() {
                 </a>
               </li>
               <li>
-                <a href="http://">
+                <a title='Follow Us of Twitter' href="http://">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -104,7 +100,7 @@ function footer() {
                 </a>
               </li>
               <li>
-                <a href="http://">
+                <a title='Follow Us of Github' href="http://">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -120,7 +116,7 @@ function footer() {
                 </a>
               </li>
               <li>
-                <a href="http://">
+                <a title='Subscribe Us of YouTube' href="http://">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -138,17 +134,32 @@ function footer() {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={styles.col}>
-            <ul>
+
+            {
+
+              footerArray.map((item,index)=>(
+                <div className={styles.col} key={index}>
+                <ul>
+                  <h3 className={"mb-5 font-semibold"}>{item.title} </h3>
+                  {item.list.map((lists,Index)=>(
+                    <li  key={Index}>
+                      <a className={"font-thin text-gray-400 hover:text-gray-100"} href="#">{lists}</a>
+                    </li>
+                  ))}
+                </ul>
+                </div>
+              ))
+            }
+            {/* <ul>
               <h3>PRODUCT</h3>
               {PRODUCT.map((item, index) => (
                 <li key={index}>
-                  <a href="http://">{item}</a>
+                  <a title='Follow Us of Facebook' href="http://">{item}</a>
                 </li>
               ))}
-            </ul>
-          </div>
-          <div className={styles.col}>
+            </ul> */}
+
+          {/* <div className={styles.col}>
             <ul>
               <h3>COMPANY</h3>
               <li>Blogs</li>
@@ -169,12 +180,13 @@ function footer() {
               <h3>SUPPORT</h3>
               <li>Contact Us</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 
       <hr />
       <a
+      className={"text-gray-400 hover:text-gray-100"}
         href="https://BufferOverflow.me"
         target="_blank"
         rel="noopener noreferrer"

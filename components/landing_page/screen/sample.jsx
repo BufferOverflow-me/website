@@ -7,7 +7,7 @@ const sample = () => {
     return (
         <div className={styles.sampleSection}>
            <div className={styles.content}>
-                <h1>
+                <h1 className={"font-bold"}>
                     Get the developer access now!
                     </h1>
                     <h3>
