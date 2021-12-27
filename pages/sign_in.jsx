@@ -36,8 +36,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-center">
-        <form className="py-10 px-6 text-center bg-[#222222] rounded-md ">
+      <div className="h-screen flex flex-col items-center justify-center m-6">
+        <form className="pb-8 text-center bg-[#222222] rounded-md ">
           <h1 className="text-2xl font-semibold  leading-loose my-10 text-cyan-50">
             Login to BufferoverFlow
           </h1>
