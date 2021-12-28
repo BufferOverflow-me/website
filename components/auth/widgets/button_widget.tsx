@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const button_widget = (props: { type: 'submit' | 'reset' | 'button' | undefined; title: string}) => {
+const button_widget = (props: { type: "button" | "submit" | "reset"; title: String | React.ReactChild | React.ReactFragment | React.ReactPortal }) => {
     return (
         <div>
             <button

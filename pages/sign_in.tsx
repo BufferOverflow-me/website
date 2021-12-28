@@ -8,6 +8,8 @@ import InputWidget from '../components/auth/widgets/input_widget';
 import SocialButton from '../components/auth/widgets/social_buttons';
 import Title from '../components/auth/widgets/title';
 import Button from '../components/auth/widgets/button_widget';
+import FormWidget from '../components/auth/widgets/form_widget';
+
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -29,18 +31,15 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div className="h-screen flex flex-col items-center justify-center mt-0">
-        <form className="pb-8 text-center rounded-md ">
-          
-          <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' />
-          <InputWidget label='Enter your password' placeholder='Password' type='password' />
-          <Button title='Log in' type='submit'/>
+    <FormWidget onSubmit={onSubmit}>
+
+          <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' onchange={(event) => setEmail(event.target.value)}  />
+          <InputWidget label='Enter your password' placeholder='Password' type='password' onchange={(event) => setPassword(event.target.value)} />
+          <Button title='Log in' type='submit' />
 
           <div className='text-lg mb-5'>or</div>
           <SocialButton google={google} />
-        </form>
-      </div>
-    </>
+
+    </FormWidget>
   );
 }
