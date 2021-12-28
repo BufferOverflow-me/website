@@ -14,7 +14,7 @@ const main = () => {
             Ullam asperiores necessitatibus nisi hic ullam ad sed voluptas. Porro ut accusamus earum soluta sint nemo.
             </div>
             <button href="#">Subscribe for updates</button>
-            <div className={styles.img, "mx-auto"}>
+            <div className={styles.img}>
 
                 <div className={styles.imagediv}>
                     <Image className={styles.myImage}

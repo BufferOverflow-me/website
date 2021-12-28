@@ -198,9 +198,11 @@ sampleSection
             transition-delay: 0s;
         }
         .img {
+            margin: auto;
             padding: 0 20px;
             display: table;
             width: -webkit-fill-available;
+            border-radius: 10px;
             box-shadow: inset 0 10.75rem 0 inherit, inset 0 -15.75rem 0 inherit;
             height: 75px;
             .myImage {
