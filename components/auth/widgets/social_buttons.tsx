@@ -1,74 +1,11 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import { useAuth } from '../context/authUserContext';
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Alert
-} from 'reactstrap';
-
-export default function Home() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
-  const router = useRouter();
-  const { signInWithEmailAndPassword, signInwithGoogle } = useAuth();
-
-  const onSubmit = (event) => {
-    setError(null);
-    signInWithEmailAndPassword(email, password);
-    event.preventDefault();
-  };
-
-  const google = (event) => {
-    setError(null);
-    signInwithGoogle('/hello');
-    event.preventDefault();
-  };
-
-  return (
-    <>
-      <div className="h-screen flex flex-col items-center justify-center m-6">
-        <form className="pb-8 text-center bg-[#222222] rounded-md ">
-          <h1 className="text-2xl font-semibold  leading-loose my-10 text-cyan-50">
-            Login to BufferoverFlow
-          </h1>
-          <input
-            aria-label="Enter your email address"
-            type="text"
-            placeholder="Email address"
-            className="text-sm text-gray-base w-3/4 my-4
-                          py-5 px-4 h-2 border
-                        border-[#222] rounded mb-2"
-          />
-
-          <input
-            aria-label="Enter your password"
-            type="password"
-            placeholder="Password"
-            className="text-sm text-gray-base w-3/4 my-4
-                        py-5 px-4 h-2 border border-[#222]
-                        rounded mb-2"
-          />
-
-          <button
-            type="submit"
-            className="bg-green-400 w-3/4 my-4 mt-4 text-green-900 p-2 rounded-md"
-          >
-            Login
-          </button>
-          <hr className="hr text-center mx-auto my-9 w-3/4 hr border-0 border-b-4 rounded-t-2 divider " />
-
-          <div className="flex flex-row justify-center">
-            <a onClick={google} className="mx-4 cursor-pointer">
+const social_buttons = (props: { google: React.MouseEventHandler<HTMLAnchorElement> }) => {
+    return (
+        <div>
+            <div className="flex flex-row justify-center">
+            <a onClick={props.google} className="mx-4 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -118,7 +55,7 @@ export default function Home() {
                 width="48"
                 height="48"
                 viewBox="0 0 48 48"
-                style={{fill:'#000000'}}
+                style={{ fill: '#000000' }}
               >
                 <path
                   fill="#039be5"
@@ -131,8 +68,19 @@ export default function Home() {
               </svg>
             </a>
           </div>
-        </form>
-      </div>
-    </>
-  );
+        </div>
+    )
 }
+
+social_buttons.propTypes = {
+    // Google login function
+    google: PropTypes.func.isRequired,
+
+    // // Github login function
+    // github: PropTypes.func.isRequired,
+
+}
+
+export default social_buttons
+
+

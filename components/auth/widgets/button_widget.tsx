@@ -1,0 +1,22 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const button_widget = (props: { type: 'submit' | 'reset' | 'button' | undefined; title: string}) => {
+    return (
+        <div>
+            <button
+                type={props.type}
+                className="bg-green-400 w-3/4 my-4 mt-4 text-green-900 p-2 rounded-md text-lg mb-10"
+            >
+                {props.title}
+            </button>
+        </div>
+    )
+}
+
+button_widget.propTypes = {
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+}
+
+export default button_widget
