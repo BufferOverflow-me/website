@@ -6,7 +6,7 @@ const button_widget = (props: { type: 'submit' | 'reset' | 'button' | undefined;
         <div>
             <button
                 type={props.type}
-                className="bg-green-400 w-3/4 my-4 mt-4 text-green-900 p-2 rounded-md text-lg mb-10"
+                className="bg-green-400 w-3/4 my-4 mt-4 text-black p-2 rounded-md text-lg mb-5"
             >
                 {props.title}
             </button>

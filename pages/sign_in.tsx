@@ -33,12 +33,11 @@ export default function Home() {
       <div className="h-screen flex flex-col items-center justify-center m-6">
         <form className="pb-8 text-center rounded-md ">
           
-          <Title title="Login to BufferOverflow"/>
           <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' />
           <InputWidget label='Enter your password' placeholder='Password' type='password' />
+          <Button title='Log in' type='submit'/>
 
-          <Button title='Login' type='submit'/>
-
+          <div className='text-lg mb-5'>or</div>
           <SocialButton google={google} />
         </form>
       </div>
