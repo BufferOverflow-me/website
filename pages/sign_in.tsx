@@ -6,7 +6,6 @@ import { useAuth } from '../context/authUserContext';
 // Components here
 import InputWidget from '../components/auth/widgets/input_widget';
 import SocialButton from '../components/auth/widgets/social_buttons';
-import Title from '../components/auth/widgets/title';
 import Button from '../components/auth/widgets/button_widget';
 import FormWidget from '../components/auth/widgets/form_widget';
 
@@ -14,19 +13,24 @@ import FormWidget from '../components/auth/widgets/form_widget';
 export default function Home() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
   const router = useRouter();
   const { signInWithEmailAndPassword, signInwithGoogle } = useAuth();
 
   const onSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
-    setError(null);
-    signInWithEmailAndPassword(email, password);
+    setError("");
+    try {
+      signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      setError("Invalid email or password");
+    }
+    
   };
 
   const google = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
-    setError(null);
+    setError("");
     signInwithGoogle('/hello');
   };
 

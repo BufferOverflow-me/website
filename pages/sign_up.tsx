@@ -7,7 +7,6 @@ import { useAuth } from '../context/authUserContext';
 // Components here
 import InputWidget from '../components/auth/widgets/input_widget';
 import SocialButton from '../components/auth/widgets/social_buttons';
-import Title from '../components/auth/widgets/title';
 import Button from '../components/auth/widgets/button_widget';
 import FormWidget from '../components/auth/widgets/form_widget';
 
@@ -18,23 +17,23 @@ const SignUp = () => {
     const [passwordTwo, setPasswordTwo] = useState("");
     const router = useRouter();
     //error handling
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
 
     const { createUserWithEmailAndPassword, signInwithGoogle } = useAuth();
 
     const onSubmit = (event: { preventDefault: () => void; }) => {
-        setError(null)
+        setError("")
         if (passwordOne === passwordTwo)
             createUserWithEmailAndPassword(email, passwordOne)
         else
-            setError("Password do not match")
+            setError("Passwords do not match")
         event.preventDefault();
     };
 
 
     const google = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
-        setError(null);
+        setError("");
         signInwithGoogle('/hello');
       };
 
