@@ -8,9 +8,9 @@ const InputWidget = (props: { label: string; type: string | (string & {}); place
                 aria-label={props.label}
                 type={props.type}
                 placeholder={props.placeholder}
-                className="text-sm w-3/4 my-4
-                          py-5 md:py-6 px-4 h-2 border
-                        border-[#222] rounded mb-2"
+                className="text-lg w-3/4 my-4
+                          py-6 px-4 h-2 border-2 
+                        border-[#222] dark:border-[#e9e9e9] rounded-lg mb-2"
             />
         </div>
     )
