@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 `
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div className="dark:bg-[#222222] dark:text-[#fbfbfb]">
     <GlobalStyle />
       <Head />
       <AuthUserProvider>
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </ThemeProvider>
       </AuthUserProvider>
-    </>
+    </div>
   );
 }
 

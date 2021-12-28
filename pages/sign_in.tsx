@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-center m-6">
+      <div className="h-screen flex flex-col items-center justify-center mt-0">
         <form className="pb-8 text-center rounded-md ">
           
           <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' />
