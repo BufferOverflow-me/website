@@ -4,6 +4,11 @@ import styles from '../../../styles/Home.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
+
+// Components here,
+import DrawerLink from './header_components/link';
+
+
 function Header() {
   const [drawer, setDrawer] = useState(false);
   const checkState = () => {
@@ -56,26 +61,11 @@ function Header() {
       </header>
       <div className={`${drawer ? styles.show : 'hidden'}`}>
           <div className={styles.mobnav}>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
-                Overview
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
-                Blog
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
-                Support
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
-                Sign in
-              </a>
-            </Link>
+            <DrawerLink title="Overview" route="/" />
+            <DrawerLink title="Blog" route="/blog" />
+            <DrawerLink title="Support" route="/Support" />
+            <DrawerLink title="Sign In" route="/sign_in" />
+            <DrawerLink title="Create an Account" route="/sign_up" />
           </div>
         </div>
     </div>
