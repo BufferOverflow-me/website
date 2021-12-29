@@ -1,14 +1,10 @@
 import '../styles/globals.scss'
 import Head from '../components/head'
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
 
 import { AuthUserProvider } from '../context/authUserContext';
 import { ThemeProvider } from 'next-themes';
 import { createGlobalStyle } from 'styled-components';
-
+import { AppProps } from 'next/dist/shared/lib/router/router';
 const GlobalStyle = createGlobalStyle`
       :root {
         --fg: #222222;
@@ -20,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         --bg: #222222;
       }
 `
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }:AppProps): JSX.Element {
   return (
     <div className="dark:bg-[#222222] dark:text-[#fbfbfb]">
     <GlobalStyle />
