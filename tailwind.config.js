@@ -8,9 +8,7 @@ module.exports = {
         container: {
             center: true,
         },
-        color: {
-
-        },
+        color: {},
         extend: {},
     },
     plugins: [],
