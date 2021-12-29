@@ -47,7 +47,7 @@ export default function useProvideAuth() {
             .signInWithEmailAndPassword(email, password)
             .then((response) => {
                 handleUser(response.user);
-                Router.push('/hello');
+                Router.push('/home');
             })
             .catch((error) => {
                 setLoading(false);
@@ -61,7 +61,7 @@ export default function useProvideAuth() {
             .createUserWithEmailAndPassword(email, password)
             .then((response) => {
                 handleUser(response.user);
-                Router.push('/hello');
+                Router.push('/home');
             })
             .catch((error) => {
                 setLoading(false);

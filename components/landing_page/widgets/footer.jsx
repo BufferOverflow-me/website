@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 
 
 const footerArray = [

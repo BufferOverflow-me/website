@@ -34,7 +34,7 @@ const SignUp = () => {
     const google = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         setError("");
-        signInwithGoogle('/hello');
+        signInwithGoogle('/home');
       };
 
     return (
@@ -42,7 +42,7 @@ const SignUp = () => {
             <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' onchange={(event) => setEmail(event.target.value)} />
             <InputWidget label='Enter your password' placeholder='Password' type='password' onchange={(event) => setPasswordOne(event.target.value)} />
             <InputWidget label='Confirm password' placeholder='Confirm Password' type='password' onchange={(event) => setPasswordTwo(event.target.value)} />
-            <Button title='Log in' type='submit' />
+            <Button title='Log in' type='submit' onClick={undefined} color={undefined}/>
 
             <div className='text-lg mb-5'>or</div>
             <SocialButton google={google} />

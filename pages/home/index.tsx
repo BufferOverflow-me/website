@@ -5,7 +5,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <>
+    <div className=''>
       <div className="h-screen w-screen">
         Current Theme is {theme}
         <br/>
@@ -17,6 +17,6 @@ export default function Home() {
           Button
         </button>
       </div>
-    </>
+    </div>
   )
 }
