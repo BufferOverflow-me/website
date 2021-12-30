@@ -105,6 +105,23 @@ export default function useProvideAuth() {
         }
     }
 
+    // Facebook
+    const signInwithFacebook = async (redirect: string | UrlObject) => {
+        setLoading(true);
+        try{
+            const response = await firebase
+            .auth()
+            .signInWithPopup(new firebase.auth.FacebookAuthProvider());
+            handleUser(response.user);
+            if (redirect) {
+                Router.push(redirect);
+            }
+        } catch (error) {
+            console.log(error);
+            Router.push('/404');
+        }
+    }
+
     const signOut = async () => {
         Router.push('/')
         await firebase.auth().signOut();
@@ -123,6 +140,7 @@ export default function useProvideAuth() {
         createUserWithEmailAndPassword,
         signInwithGoogle,
         signInwithGithub,
+        signInwithFacebook,
         signOut
     };
 }
