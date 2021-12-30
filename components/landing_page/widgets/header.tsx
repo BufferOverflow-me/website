@@ -28,7 +28,7 @@ function Header() {
           </Link>
           <button
             className={
-              'button text-2xl text-black dark:text-white h-auto lg:hidden absolute top-6 right-8 '
+              'button text-2xl h-auto lg:hidden absolute top-6 right-8 '
             }
             onClick={checkState}
           >
@@ -64,13 +64,18 @@ function Header() {
           </nav>
         </header>
       </div>
-      <div className={`${drawer ? styles.show : 'hidden'}`}>
-        <div className={styles.mobnav}>
-          <DrawerLink title="Overview" route="/" />
-          <DrawerLink title="Blog" route="/blog" />
-          <DrawerLink title="Support" route="/Support" />
-          <DrawerLink title="Sign In" route="/sign_in" />
-          <DrawerLink title="Create an Account" route="/sign_up" />
+       {/* Navbar for small and medium sized devices */}
+
+       {/* Issue: Idk why text colors are getting over rided! */}
+       <div className='lg:hidden bg-[#b7dbf0]'> 
+        <div className={`${drawer ? 'visible' : 'hidden'}`}>
+          <div className='mt-4 ml-1.5 flex flex-col flex-wrap items-start justify-between'>
+            <DrawerLink title="Overview" route="/" />
+            <DrawerLink title="Blog" route="/blog" />
+            <DrawerLink title="Support" route="/Support" />
+            <DrawerLink title="Sign In" route="/sign_in" />
+            <DrawerLink title="Create an Account" route="/sign_up" />
+          </div>
         </div>
       </div>
     </div>

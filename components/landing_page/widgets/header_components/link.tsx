@@ -7,7 +7,7 @@ const link = (props: { route: string | UrlObject; title: string }) => {
     return (
         <div>
             <Link href={props.route}>
-                <a className="m-2 w-max hover:text-violet-400 font-light text-lg text-white h-auto">
+                <a className="m-2 w-max hover:text-violet-400 font-light text-lg h-auto">
                     {props.title}
                 </a>
             </Link>
