@@ -87,19 +87,6 @@ export default function useProvideAuth() {
             Router.push('/404')
         }
     };
-    const signInWithGithub = async(redirect: string | UrlObject) =>{
-        setLoading(true);
-        try {
-            const response = await firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider());
-            handleUser(response.user);
-            if(redirect){
-                Router.push(redirect);
-            }
-        } catch (error) {
-            console.log(error);
-            Router.push('/404');
-        }
-    }
 
     // Github
     const signInwithGithub = async (redirect: string | UrlObject) => {
@@ -107,9 +94,8 @@ export default function useProvideAuth() {
         try {
             const response = await firebase
                 .auth()
-                .signInWithRedirect(new firebase.auth.GithubAuthProvider());
-            const resp = await firebase.auth().getRedirectResult();
-            handleUser(resp.user);
+                .signInWithPopup(new firebase.auth.GithubAuthProvider());
+            handleUser(response.user);
             if (redirect) {
                 Router.push(redirect);
             }
