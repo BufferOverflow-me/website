@@ -15,7 +15,7 @@ export default function Home() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
-  const { signInWithEmailAndPassword, signInwithGoogle } = useAuth();
+  const { signInWithEmailAndPassword, signInwithGoogle, signInwithGithub } = useAuth();
 
   const onSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
@@ -34,6 +34,12 @@ export default function Home() {
     signInwithGoogle('/home');
   };
 
+  const github = (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+    setError("");
+    signInwithGithub('/home');
+  }
+
   return (
     <FormWidget onSubmit={onSubmit}>
 
@@ -42,7 +48,7 @@ export default function Home() {
           <Button title='Log in' type='submit' onClick={undefined} color={undefined}/>
 
           <div className='text-lg mb-5'>or</div>
-          <SocialButton google={google} />
+          <SocialButton google={google} github={github}/>
 
     </FormWidget>
   );

@@ -13,12 +13,12 @@ export default function LandingPage() {
   const router = useRouter();
 
   // Listen to changes on loading and authUser
-  useEffect(()=>{
-    // If user is logged in, redirect to /home page
-    if(loading && User){
-      router.push('/home');
-    }
-  }, [User, loading, router]);
+  // useEffect(()=>{
+  //   // If user is logged in, redirect to /home page
+  //   if(loading && User){
+  //     router.push('/home');
+  //   }
+  // }, [User, loading, router]);
 
   // Landing page
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const social_buttons = (props: { google: React.MouseEventHandler<HTMLAnchorElement> }) => {
+const social_buttons = (props: { google: React.MouseEventHandler<HTMLAnchorElement>; github: React.MouseEventHandler<HTMLAnchorElement>; }) => {
     return (
         <div>
             <div className="flex flex-row justify-center">
@@ -37,7 +37,7 @@ const social_buttons = (props: { google: React.MouseEventHandler<HTMLAnchorEleme
             </a>
 
             {/* Github Icon */}
-            <a href="" className="mx-4 cursor-pointer">
+            <a onClick={props.github} className="mx-4 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -83,7 +83,7 @@ social_buttons.propTypes = {
     google: PropTypes.func.isRequired,
 
     // // Github login function
-    // github: PropTypes.func.isRequired,
+    github: PropTypes.func.isRequired,
 
 }
 
