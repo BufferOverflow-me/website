@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import firebase from "./firebase";
 import cookie from 'js-cookie';
 import Router from "next/router";
+import { redirect } from "next/dist/server/api-utils";
 
 const formatUser = async (user) => {
     const token = await user.getIdToken();
@@ -71,14 +72,32 @@ export default function useProvideAuth() {
 
     const signInwithGoogle = async (redirect) => {
         setLoading(true);
-        const response = await firebase
-            .auth()
-            .signInWithPopup(new firebase.auth.GoogleAuthProvider());
-        handleUser(response.user);
-        if (redirect) {
-            Router.push(redirect);
+        try {
+            const response = await firebase
+                .auth()
+                .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+            handleUser(response.user);
+            if (redirect) {
+                Router.push(redirect);
+            }
+        } catch (error) {
+            console.log(error)
+            Router.push('/404')
         }
     };
+    const signInWithGithub = async(redirect) =>{
+        setLoading(true);
+        try {
+            const response = await firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider());
+            handleUser(response.user);
+            if(redirect){
+                Router.push(redirect);
+            }
+        } catch (error) {
+            console.log(error);
+            Router.push('/404');
+        }
+    }
 
 
     const signOut = async () => {
@@ -98,6 +117,7 @@ export default function useProvideAuth() {
         signInWithEmailAndPassword,
         createUserWithEmailAndPassword,
         signInwithGoogle,
+        signInWithGithub,
         signOut
     };
 }

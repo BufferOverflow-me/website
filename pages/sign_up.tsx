@@ -19,7 +19,7 @@ const SignUp = () => {
     //error handling
     const [error, setError] = useState("");
 
-    const { createUserWithEmailAndPassword, signInwithGoogle } = useAuth();
+    const { createUserWithEmailAndPassword, signInwithGoogle, signInWithGithub } = useAuth();
 
     const onSubmit = (event: { preventDefault: () => void; }) => {
         setError("")
@@ -35,17 +35,22 @@ const SignUp = () => {
         event.preventDefault();
         setError("");
         signInwithGoogle('/home');
-      };
+    };
+    const github = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
+        setError("");
+        signInWithGithub('/home');
+    };
 
     return (
         <FormWidget onSubmit={onSubmit}>
             <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' onchange={(event) => setEmail(event.target.value)} />
             <InputWidget label='Enter your password' placeholder='Password' type='password' onchange={(event) => setPasswordOne(event.target.value)} />
             <InputWidget label='Confirm password' placeholder='Confirm Password' type='password' onchange={(event) => setPasswordTwo(event.target.value)} />
-            <Button title='Log in' type='submit' onClick={undefined} color={undefined}/>
+            <Button title='Log in' type='submit' onClick={undefined} color={undefined} />
 
             <div className='text-lg mb-5'>or</div>
-            <SocialButton google={google} />
+            <SocialButton google={google} github={github}/>
         </FormWidget>
     )
 }
