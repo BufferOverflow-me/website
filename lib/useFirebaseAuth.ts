@@ -2,32 +2,31 @@ import { useState, useEffect } from "react";
 import firebase from "./firebase";
 import cookie from 'js-cookie';
 import Router from "next/router";
-import { redirect } from "next/dist/server/api-utils";
+import { UrlObject } from "url";
 
-const formatUser = async (user) => {
+const formatUser = async (user: firebase.User) => {
     const token = await user.getIdToken();
     return {
         uid: user.uid,
         email: user.email,
         name: user.displayName,
-        provider: user.providerData[0].providerId,
+        provider: user.providerData[0]!.providerId,
         photoUrl: user.photoURL,
         token
     };
 };
 
 export default function useProvideAuth() {
-    const [User, setUser] = useState(null);
+    const [User, setUser] = useState({});
     const [loading, setLoading] = useState(true);
 
-    const handleUser = async (rawUser) => {
+    const handleUser = async (rawUser: boolean | firebase.User | null) => {
         if (rawUser) {
-            const user = await formatUser(rawUser);
+            const user = await formatUser(rawUser as firebase.User);
             // Print the token to the console for testing purposes
-            console.log(user);
             const { token, ...userWithoutToken } = user;
             setUser(user);
-            cookie.set('bufferoverflow-auth', true, {
+            cookie.set('bufferoverflow-auth', 'true', {
                 expires: 1
             });
             setLoading(false);
@@ -41,7 +40,7 @@ export default function useProvideAuth() {
     };
 
 
-    const signInWithEmailAndPassword = (email, password) => {
+    const signInWithEmailAndPassword = (email: string, password: string) => {
         setLoading(true);
         firebase
             .auth()
@@ -56,7 +55,7 @@ export default function useProvideAuth() {
             });
     }
 
-    const createUserWithEmailAndPassword = (email, password) => {
+    const createUserWithEmailAndPassword = (email: string, password: string) => {
         firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
@@ -67,10 +66,13 @@ export default function useProvideAuth() {
             .catch((error) => {
                 setLoading(false);
                 console.log(error);
-            });
+            }).finally(()=>{
+                // Send verification email
+                firebase.auth().currentUser?.sendEmailVerification();
+            })
     }
 
-    const signInwithGoogle = async (redirect) => {
+    const signInwithGoogle = async (redirect: string | UrlObject) => {
         setLoading(true);
         try {
             const response = await firebase
@@ -85,7 +87,7 @@ export default function useProvideAuth() {
             Router.push('/404')
         }
     };
-    const signInWithGithub = async(redirect) =>{
+    const signInWithGithub = async(redirect: string | UrlObject) =>{
         setLoading(true);
         try {
             const response = await firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider());
@@ -99,6 +101,23 @@ export default function useProvideAuth() {
         }
     }
 
+    // Github
+    const signInwithGithub = async (redirect: string | UrlObject) => {
+        setLoading(true);
+        try {
+            const response = await firebase
+                .auth()
+                .signInWithRedirect(new firebase.auth.GithubAuthProvider());
+            const resp = await firebase.auth().getRedirectResult();
+            handleUser(resp.user);
+            if (redirect) {
+                Router.push(redirect);
+            }
+        } catch (error) {
+            console.log(error);
+            Router.push('/404');
+        }
+    }
 
     const signOut = async () => {
         Router.push('/')
@@ -117,7 +136,7 @@ export default function useProvideAuth() {
         signInWithEmailAndPassword,
         createUserWithEmailAndPassword,
         signInwithGoogle,
-        signInWithGithub,
+        signInwithGithub,
         signOut
     };
 }

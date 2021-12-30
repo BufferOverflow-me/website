@@ -19,7 +19,7 @@ const SignUp = () => {
     //error handling
     const [error, setError] = useState("");
 
-    const { createUserWithEmailAndPassword, signInwithGoogle, signInWithGithub } = useAuth();
+    const { createUserWithEmailAndPassword, signInwithGoogle, signInwithGithub } = useAuth();
 
     const onSubmit = (event: { preventDefault: () => void; }) => {
         setError("")
@@ -36,12 +36,12 @@ const SignUp = () => {
         setError("");
         signInwithGoogle('/home');
     };
+
     const github = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         setError("");
-        signInWithGithub('/home');
-    };
-
+        signInwithGithub('/home');
+    }
     return (
         <FormWidget onSubmit={onSubmit}>
             <InputWidget label='Enter your email' placeholder='Enter your email address' type='email' onchange={(event) => setEmail(event.target.value)} />
