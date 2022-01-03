@@ -9,6 +9,7 @@ module.exports = {
     },
     images: {
         domains: [
+            'avatars.githubusercontent.com',
             'images.unsplash.com',
             'media.istockphoto.com',
             'img.icons8.com',

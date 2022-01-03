@@ -19,6 +19,7 @@ const formatUser = async (user: firebase.User) => {
 export default function useProvideAuth() {
     const [User, setUser] = useState({});
     const [loading, setLoading] = useState(true);
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const handleUser = async (rawUser: boolean | firebase.User | null) => {
         if (rawUser) {
@@ -29,6 +30,7 @@ export default function useProvideAuth() {
             cookie.set('bufferoverflow-auth', 'true', {
                 expires: 1
             });
+            setLoggedIn(true);
             setLoading(false);
             return user;
         } else {
@@ -136,6 +138,7 @@ export default function useProvideAuth() {
     return {
         User,
         loading,
+        loggedIn,
         signInWithEmailAndPassword,
         createUserWithEmailAndPassword,
         signInwithGoogle,
