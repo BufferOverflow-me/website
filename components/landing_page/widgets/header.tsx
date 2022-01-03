@@ -3,12 +3,10 @@ import Link from 'next/link';
 import styles from '../../../styles/Home.module.scss';
 import { useState } from 'react';
 import { useAuth } from '../../../context/authUserContext';
-import Image from 'next/image';
 // Components here,
 import DrawerLink from './header_components/link';
 import UserImage from '../../../components/auth/widgets/userImage';
 import AuthButton from '../../auth/widgets/auth_buttons';
-import Loading from '../../../components/animations/loading';
 
 
 function Header() {

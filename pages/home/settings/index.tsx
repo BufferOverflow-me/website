@@ -17,11 +17,6 @@ const Index = () => {
       router.push('/')
   }, [User, loading, router])
 
-  // function to delete the token from the local storage
-  const deleteToken = () => {
-    localStorage.removeItem('bufferoverflow-auth');
-    alert('Token has been deleted!');
-  }
 
   const userImage =() =>{
     if(User){
