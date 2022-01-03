@@ -23,7 +23,8 @@ function Header() {
     if (loggedIn) {
       return (
         <>
-          <div>
+          <div className='flex gap-5 items-center'>
+            {User.name}
             <UserImage src={User.photoUrl}/>
           </div>
         </>
