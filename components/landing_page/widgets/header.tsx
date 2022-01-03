@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../../../styles/Home.module.scss';
 import { useState } from 'react';
-
-
+import { useAuth } from '../../../context/authUserContext';
+import Image from 'next/image';
 // Components here,
 import DrawerLink from './header_components/link';
+import UserImage from '../../../components/auth/widgets/userImage';
+import AuthButton from '../../auth/widgets/auth_buttons';
+import Loading from '../../../components/animations/loading';
 
 
 function Header() {
@@ -13,7 +16,26 @@ function Header() {
   const checkState = () => {
     setDrawer(!drawer);
   };
+  // Profile section hooks
+  const { User, loggedIn } = useAuth();
 
+
+  const profileSection = () => {
+    // If user is logged in, show the profile section
+    if (loggedIn) {
+      return (
+        <>
+          <div>
+            <UserImage src={User.photoUrl}/>
+          </div>
+        </>
+      )
+    }
+    // If user is not logged in, show the login section
+    return (
+     <AuthButton />
+    );
+  }
   return (
     <div>
       <div className={styles.skip}>
@@ -48,26 +70,14 @@ function Header() {
             </Link>
           </nav>
           <nav className={styles.right_nav}>
-            <div className="flex items-center gap-x-5">
-              <div className="transition-all duration-700 hover:shadow-lg hover:shadow-[#23e2ce]/50 rounded-lg p-2">
-                <Link href="/sign_in" passHref>
-                  Login
-                </Link>
-              </div>
-              <div className='bg-gradient-to-l from-[#cec1ce] to-[#23e2ce] shadow-lg shadow-[#23e2ce]/50 text-white text-2xl h-max w-max p-2 rounded-lg 
-              transition-all duration-700 ease-linear hover:bg-gradient-to-r'>
-                <Link href="/sign_up" passHref>
-                  Create Account
-                </Link>
-              </div>
-            </div>
+            {profileSection()}
           </nav>
         </header>
       </div>
-       {/* Navbar for small and medium sized devices */}
+      {/* Navbar for small and medium sized devices */}
 
-       {/* Issue: Idk why text colors are getting over rided! */}
-       <div className='lg:hidden bg-[#b7dbf0]'> 
+      {/* Issue: Idk why text colors are getting over rided! */}
+      <div className='lg:hidden bg-[#b7dbf0]'>
         <div className={`${drawer ? 'visible' : 'hidden'}`}>
           <div className='mt-4 ml-1.5 flex flex-col flex-wrap items-start justify-between'>
             <DrawerLink title="Overview" route="/" />

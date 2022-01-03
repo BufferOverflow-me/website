@@ -4,35 +4,27 @@ import Featurecard from '../widgets/featurecard'
 
 const myFeature = [
     {
-        title: 'Feature',
-        desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
+        title: 'Confess',
+        desc: 'A place to confess anonymously and share your feelings.'
     },
     {
-        title: 'Feature',
-        desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
+        title: 'Builder',
+        desc: 'A service to build your website with the best design and features.'
     },
     {
-        title: 'Feature',
-        desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
-
-    },
-    {
-        title: 'Feature',
-        desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
-    },
-    {
-        title: 'Feature',
-        desc: 'Eum quisquam voluptate quia eveniet. Nam sit voluptatem nihil.'
+        title: 'Designer',
+        desc: 'A place to enlish your ideas and share your design.'
     },
 ];
 const feature = () => {
     return (
         <div className={styles.featureSection}>
             <h1>
-                All the feature you want
+                Our Products and Services
             </h1>
             <div className={styles.desc}>
-                Ullam asperiores necessitatibus nisi hic ullam ad sed voluptas. Porro ut accusamus earum soluta sint nemo. Animi blanditiis exercitationem quisquam. Laudantium est ea corrupti.
+                All our products and services are designed to help you grow your business.
+                Right now most of them are under development, so that we can provide you with the best experience.
             </div>
             <div className={styles.grid}>
                 {
