@@ -11,7 +11,7 @@ const main = () => {
                 A place to build <span>great services.</span>
             </div>
             <div className={styles.desc}>
-            Ullam asperiores necessitatibus nisi hic ullam ad sed voluptas. Porro ut accusamus earum soluta sint nemo.
+                The best place to build, design, and unleash your ideas.
             </div>
             <button href="#">Subscribe for updates</button>
             <div className={styles.img}>

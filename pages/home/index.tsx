@@ -1,21 +1,52 @@
 import { useTheme } from 'next-themes'
+import { useAuth } from '../../context/authUserContext';
+import Image from 'next/image';
 
-
+// COmponents here
+import UserImage from '../../components/auth/widgets/userImage';
+import { useEffect } from 'react';
+import router from 'next/router';
 export default function Home() {
+  const { User,loading } = useAuth();
   const { theme, setTheme } = useTheme();
 
+  // Listen for changes on loading and authUser, redirect if needed
+  useEffect(() => {
+    if (!loading && !User)
+      router.push('/')
+  }, [User, loading])
+
+  
+  // A dashboard for the user
   return (
     <div className=''>
-      <div className="h-screen w-screen">
-        Current Theme is {theme}
-        <br/>
-        <button
-          className="p-3 h-12 w-12 order-2 md:order-3"
-          type="button"
-          aria-label="Toggle dark mode"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-          Button
-        </button>
+      <div className='w-screen py-10 drop-shadow-lg bg-gray-200 dark:bg-gray-700'>
+        <div className='mx-64 justify-between  flex items-center '>
+          <div className='font-semibold text-2xl text-gray-600 dark:text-gray-50'>
+            Hi, {User.name}
+          </div>
+          <div className='rounded-full flex items-center gap-10'>
+            {/* A moon iconed button that will change the theme */}
+            <button
+              className='w-12 h-12 rounded-full'
+              type='button'
+              aria-label="Toggle dark mode"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              <Image src={theme === 'light' ? '/svgs/light_moon.svg' : '/svgs/dark_moon.svg'} width={50} height={50} alt='Theme toogle' />
+            </button>
+
+            {<UserImage src={User.photoUrl} />}
+          </div>
+        </div>
+      </div>
+      {/* Home Section */}
+      <div className='h-screen'>
+        <div className='mt-10 mx-72 h-1/5 bg-gray-300 dark:bg-gray-700 shadow-2xl shadow-slate-500/50 dark:shadow-slate-400/25 rounded-2xl flex justify-center items-center text-2xl text-center'>
+          We are under development.
+          <br />
+          Sorry for Incovinience.
+        </div>
       </div>
     </div>
   )
