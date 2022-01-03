@@ -4,10 +4,19 @@ import Image from 'next/image';
 
 // COmponents here
 import UserImage from '../../components/auth/widgets/userImage';
+import { useEffect } from 'react';
+import router from 'next/router';
 export default function Home() {
-  const { User } = useAuth();
+  const { User,loading } = useAuth();
   const { theme, setTheme } = useTheme();
 
+  // Listen for changes on loading and authUser, redirect if needed
+  useEffect(() => {
+    if (!loading && !User)
+      router.push('/')
+  }, [User, loading])
+
+  
   // A dashboard for the user
   return (
     <div className=''>

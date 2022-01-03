@@ -23,10 +23,12 @@ function Header() {
     if (loggedIn) {
       return (
         <>
-          <div className='flex gap-5 items-center'>
-            {User.name}
-            <UserImage src={User.photoUrl}/>
-          </div>
+          <Link href='/home' passHref>
+            <div className='flex gap-5 items-center cursor-pointer'>
+              {User.name}
+              <UserImage src={User.photoUrl}/>
+            </div>
+          </Link>
         </>
       )
     }
