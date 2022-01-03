@@ -5,7 +5,7 @@ const userImage = (props:{src:string})=> {
         <div>
             <div className='flex flex-col items-center justify-center'>
             <Image
-              src={props.src}
+              src='/profile.svg'
               width={50}
               height={50}
               className='rounded-full'
