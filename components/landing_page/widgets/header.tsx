@@ -7,7 +7,8 @@ import Image from 'next/image';
 // Components here,
 import DrawerLink from './header_components/link';
 import UserImage from '../../../components/auth/widgets/userImage';
-
+import AuthButton from '../../auth/widgets/auth_buttons';
+import Loading from '../../../components/animations/loading';
 
 
 function Header() {
@@ -17,15 +18,7 @@ function Header() {
   };
   // Profile section hooks
   const { User, loggedIn } = useAuth();
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    if (!loading && !User) {
-      setLoading(false);
-    } else {
-      setLoading(false);
-    }
-  }, [loading, setLoading, User]);
+
 
   const profileSection = () => {
     // If user is logged in, show the profile section
@@ -40,21 +33,7 @@ function Header() {
     }
     // If user is not logged in, show the login section
     return (
-      <div>
-        <div className="flex items-center gap-x-5">
-          <div className="transition-all duration-700 hover:shadow-lg hover:shadow-[#23e2ce]/50 rounded-lg p-2">
-            <Link href="/sign_in" passHref>
-              Login
-            </Link>
-          </div>
-          <div className='bg-gradient-to-l from-[#cec1ce] to-[#23e2ce] shadow-lg shadow-[#23e2ce]/50 text-white text-2xl h-max w-max p-2 rounded-lg
-                transition-all duration-700 ease-linear hover:bg-gradient-to-r'>
-            <Link href="/sign_up" passHref>
-              Create Account
-            </Link>
-          </div>
-        </div>
-      </div>
+     <AuthButton />
     );
   }
   return (
