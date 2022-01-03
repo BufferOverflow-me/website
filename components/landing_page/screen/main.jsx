@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../../../styles/Home.module.scss'
-import Typed from 'typed.js'
 const myLoader = () => {
     return `https://images.unsplash.com/photo-1503437313881-503a91226402?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzODI5NXwwfDF8c2VhcmNofDF8fGRvJTIwd2hhdCUyMGlzJTIwZ3JlYXR8ZW58MHx8fHwxNjQwMDk1Mjk3&ixlib=rb-1.2.1&q=80&w=400`
   }
