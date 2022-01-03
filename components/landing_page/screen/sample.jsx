@@ -25,6 +25,7 @@ const sample = () => {
                         width={700}
                         height={500}
                         className='rounded-2xl blur-sm'
+                        priority={true}
                     />
                 </div>
             </div>

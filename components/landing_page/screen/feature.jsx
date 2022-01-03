@@ -13,7 +13,7 @@ const myFeature = [
     },
     {
         title: 'Designer',
-        desc: 'A place to enlish your ideas and share your design.'
+        desc: 'A place to enleash your ideas and share your design.'
     },
 ];
 const feature = () => {
