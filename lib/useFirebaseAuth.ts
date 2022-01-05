@@ -28,7 +28,9 @@ export default function useProvideAuth() {
             const { token, ...userWithoutToken } = user;
             setUser(user);
             cookie.set('bufferoverflow-auth', 'true', {
-                expires: 1
+                expires: 1,
+                sameSite: 'strict',
+                secure: true
             });
             setLoggedIn(true);
             setLoading(false);
